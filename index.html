@@ -16,9 +16,9 @@
       --accent: #0ea5e9;
       --accent-fg: #0c4a6e;
       --ring: #38bdf8;
-      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
-      --radius: 14px;
-      --container: 1080px;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(0,0,0,.05);
+      --radius: 12px;
+      --container: 1040px;
       --step--1: clamp(.88rem,.86rem + .1vw, .95rem);
       --step-0: clamp(1rem,.98rem + .15vw,1.075rem);
       --step-1: clamp(1.25rem,1.18rem + .4vw,1.45rem);
@@ -35,7 +35,7 @@
         --accent: #38bdf8;
         --accent-fg: #bae6fd;
         --ring: #38bdf8;
-        --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+        --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
       }
     }
     [data-theme="dark"] {
@@ -47,7 +47,7 @@
       --accent: #38bdf8;
       --accent-fg: #bae6fd;
       --ring: #38bdf8;
-      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+      --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
@@ -56,32 +56,34 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background: var(--bg);
       color: var(--fg);
-      line-height: 1.6;
+      line-height: 1.68;
       font-size: var(--step-0);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+    html { scroll-behavior: smooth; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     a:focus { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
     .container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: 20px; }
-    .stack { display: grid; gap: 28px; }
+    .stack { display: grid; gap: 22px; padding: 20px 0 0; }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 22px;
+      padding: 20px;
     }
     .section-title {
       font-size: var(--step-2);
-      margin: 0 0 16px 0;
+      margin: 0 0 14px 0;
       letter-spacing: .2px;
     }
+    main section[id] { scroll-margin-top: 88px; }
     header {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(180%) blur(8px);
-      background: color-mix(in hsl, var(--bg) 80%, transparent);
+      background: color-mix(in hsl, var(--bg) 92%, transparent);
       border-bottom: 1px solid var(--border);
     }
     .nav {
@@ -94,18 +96,20 @@
     .avatar {
       width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
     }
-    .links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .links a {
-      padding: 6px 10px; border-radius: 10px; border: 1px solid transparent;
+      padding: 6px 10px; border-radius: 999px; border: 1px solid transparent;
+      color: var(--muted);
+      font-size: var(--step--1);
     }
-    .links a:hover { background: color-mix(in hsl, var(--accent) 10%, transparent); text-decoration: none; }
+    .links a:hover { background: color-mix(in hsl, var(--accent) 10%, transparent); color: var(--fg); text-decoration: none; }
     .links a.active { border-color: var(--border); }
     .toggle {
       border: 1px solid var(--border); background: var(--card); color: var(--fg);
       border-radius: 999px; padding: 6px 10px; cursor: pointer;
     }
     .hero {
-      padding: 34px 0 8px;
+      padding: 28px 0 6px;
     }
     .intro {
       display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: start;
@@ -114,6 +118,7 @@
       width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
     }
     .intro h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 8px 0; }
+    .intro p { max-width: 72ch; margin: 0 0 12px 0; }
     .muted { color: var(--muted); }
     .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
     .pill-row a {
@@ -143,6 +148,86 @@
     .sub { font-weight: 600; color: var(--muted); margin-bottom: 6px; }
     .meta { font-weight: 600; }
     .links-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .section-note {
+      color: var(--muted);
+      margin: -4px 0 14px 0;
+      max-width: 72ch;
+    }
+    #research > .grid > .card,
+    #patents > .grid > .card,
+    #supervision > .grid > .card {
+      box-shadow: none;
+      background: color-mix(in hsl, var(--card) 94%, var(--bg));
+      padding: 18px;
+    }
+    #research .grid,
+    #patents .grid,
+    #supervision .grid {
+      gap: 12px;
+    }
+    #research .item {
+      grid-template-columns: 80px 1fr;
+      gap: 14px;
+    }
+    #research .media {
+      width: 72px;
+      height: 72px;
+    }
+    #research .title,
+    #patents .title,
+    #supervision .title {
+      line-height: 1.35;
+    }
+    #research .sub,
+    #research .meta,
+    #patents .sub,
+    #supervision .meta {
+      font-size: var(--step--1);
+    }
+    #research .links-row {
+      margin-top: 6px;
+    }
+    #experience {
+      position: relative;
+    }
+    #experience::before {
+      content: "";
+      position: absolute;
+      left: 64px;
+      top: 76px;
+      bottom: 24px;
+      width: 1px;
+      background: color-mix(in hsl, var(--border) 85%, transparent);
+    }
+    #experience .item {
+      position: relative;
+      grid-template-columns: 92px 1fr;
+      gap: 20px;
+      padding-left: 0;
+    }
+    #experience .item::before {
+      content: "";
+      position: absolute;
+      left: 60px;
+      top: 36px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--border);
+    }
+    #experience .media {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      margin-left: 16px;
+    }
+    #experience .meta {
+      color: var(--accent-fg);
+      font-size: var(--step--1);
+      margin-bottom: 4px;
+    }
     footer {
       border-top: 1px solid var(--border);
       margin-top: 48px;
@@ -151,7 +236,18 @@
     @media (max-width: 640px) {
       .intro { grid-template-columns: 1fr; }
       .item, .timeline li { grid-template-columns: 1fr; }
-      .links { gap: 10px; }
+      #experience::before { display: none; }
+      #experience .item::before { display: none; }
+      #experience .media { margin-left: 0; }
+      .nav { align-items: flex-start; }
+      .links {
+        gap: 8px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        width: 100%;
+      }
+      .links a, .toggle { white-space: nowrap; }
     }
     @media (prefers-reduced-motion: no-preference) {
       .card, .pill-row a, .links a, .toggle { transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
@@ -174,6 +270,7 @@
         <a href="#research">Research</a>
         <a href="#patents">Patents</a>
         <a href="#supervision">Supervision</a>
+        <a href="images.html">Memories</a>
         <button class="toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
       </nav>
     </div>
@@ -187,6 +284,7 @@
           <h1>Mert Kilickaya</h1>
 <p>Hello! I am an AI researcher working on autonomous scientific discovery. My vision is to build AI systems that autonomously discover scientific knowledge from large, unstructured data.</p>
           <p>Towards that goal, I have contributed to continual pre-training agents at <a href="https://dai.win.tue.nl/team/5/" target="_blank" rel="noopener">Learning to Learn Lab</a> and earned my PhD in deep vision at the <a href="https://ivi.fnwi.uva.nl/quva/" target="_blank" rel="noopener">QUvA Lab</a> under <a href="https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&hl=en" target="_blank" rel="noopener">Arnold Smeulders</a>.</p>
+          <p>I like to generate visual <a href="images.html">memories</a> when I can.</p>
           <div class="pill-row">
             <a href="mailto:kilickayamert@gmail.com">Email</a>
             <a href="resume/resume.pdf" target="_blank" rel="noopener">CV</a>
@@ -253,6 +351,7 @@
 
     <section id="research" class="card">
       <h2 class="section-title">Research</h2>
+      <p class="section-note">A selected list of papers and projects.</p>
       <div class="grid grid-2">
         <div class="card">
           <div class="item">

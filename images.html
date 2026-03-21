@@ -1,186 +1,352 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Memories</title>
     <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #0f172a;
+        --muted: #475569;
+        --card: #ffffff;
+        --border: #e5e7eb;
+        --accent: #0ea5e9;
+        --ring: #38bdf8;
+        --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(0,0,0,.05);
+        --radius: 12px;
+        --container: 1040px;
+        --gallery-container: 1480px;
+        --step--1: clamp(.88rem,.86rem + .1vw, .95rem);
+        --step-0: clamp(1rem,.98rem + .15vw,1.075rem);
+        --step-1: clamp(1.25rem,1.18rem + .4vw,1.45rem);
+        --step-2: clamp(1.5rem,1.42rem + .6vw,1.8rem);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1220;
+          --fg: #e5e7eb;
+          --muted: #94a3b8;
+          --card: #0f172a;
+          --border: #1f2937;
+          --accent: #38bdf8;
+          --ring: #38bdf8;
+          --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
+        }
+      }
+      [data-theme="dark"] {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #94a3b8;
+        --card: #0f172a;
+        --border: #1f2937;
+        --accent: #38bdf8;
+        --ring: #38bdf8;
+        --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
+      }
+      * { box-sizing: border-box; }
       body {
-        background-color: #f1f1f1;
-        font-family: Arial, sans-serif;
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.68;
+        font-size: var(--step-0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      a:focus, button:focus { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
+      .container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: 20px; }
+      .gallery-container { width: min(100%, var(--gallery-container)); margin-inline: auto; padding-inline: 20px; }
+      header {
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: saturate(180%) blur(8px);
+        background: color-mix(in hsl, var(--bg) 92%, transparent);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        padding: 10px 0;
+      }
+      .brand {
+        display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .2px;
+      }
+      .avatar {
+        width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
+      }
+      .links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+      .links a {
+        padding: 6px 10px; border-radius: 999px; border: 1px solid transparent;
+        color: var(--muted); font-size: var(--step--1);
+      }
+      .links a:hover, .links a.active {
+        background: color-mix(in hsl, var(--accent) 10%, transparent);
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .toggle {
+        border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 10px; cursor: pointer;
+      }
+      main { padding: 22px 0 40px; }
+      .intro {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        margin-bottom: 22px;
       }
       h1 {
-        text-align: center;
-        margin-top: 50px;
+        font-size: var(--step-2);
+        margin: 0 0 10px 0;
       }
-      table {
-        margin: 50px auto;
-        border-collapse: collapse;
+      .intro p {
+        color: var(--muted);
+        margin: 0;
+        max-width: 70ch;
       }
-      td {
+      .year-section {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
         padding: 20px;
-        vertical-align: top;
-        border: 1px solid #ddd;
       }
-      img {
-        max-width: 100%;
-        height: auto;
+      .year-section + .year-section { margin-top: 18px; }
+      .year-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
       }
-      .location {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 10px;
+      .year-head h2 {
+        font-size: var(--step-1);
+        margin: 0;
       }
-      .time {
-        font-size: 14px;
-        color: #666;
-        margin-top: 5px;
+      .year-head span {
+        color: var(--muted);
+        font-size: var(--step--1);
+      }
+      .gallery {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      figure {
+        margin: 0;
+      }
+      figure img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: color-mix(in hsl, var(--bg) 92%, var(--card));
+      }
+      figcaption {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: var(--step--1);
+        line-height: 1.45;
+      }
+      @media (max-width: 900px) {
+        .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      @media (max-width: 640px) {
+        .nav { align-items: flex-start; }
+        .links {
+          gap: 8px;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding-bottom: 4px;
+          width: 100%;
+        }
+        .links a, .toggle { white-space: nowrap; }
+        .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .year-head { flex-direction: column; align-items: flex-start; }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .year-section, figure img, .links a, .toggle { transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+        .year-section:hover { transform: translateY(-2px); }
       }
     </style>
   </head>
   <body>
-    <h1>Memories</h1>
-    <table>
-      <tr>
-        <td>
-          <img src="images/albufeira.jpg">
-          <div class="location">Albufeira, Portugal</div>
-          <div class="time">January, 2023</div>
-        </td>
-        <td>
-          <img src="images/olhao.png">
-          <div class="location">Olhao, Portugal</div>
-          <div class="time">January, 2023</div>
-        </td>
-        <td>
-          <img src="images/faro.jpg">
-          <div class="location">Faro, Portugal</div>
-          <div class="time">January, 2023</div>
-        </td>
-        <td>
-        <img src="images/desert_island.jpg">
-        <div class="location">Desert Island, Portugal</div>
-        <div class="time">January, 2023</div>
-        </td>
-        <td>
-            <img src="images/desert_island2.jpg">
-            <div class="location">Desert Island, Portugal</div>
-            <div class="time">January, 2023</div>
-            </td>
-    </tr>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <img class="avatar" src="images/avatar3.JPG" alt="Mert Kilickaya" />
+          <span>Mert Kilickaya</span>
+        </div>
+        <nav class="links">
+          <a href="index.html">Home</a>
+          <a href="images.html" class="active">Memories</a>
+          <button class="toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+        </nav>
+      </div>
+    </header>
 
-    <tr>
-        <td>
-          <img src="images/rome.jpg">
-          <div class="location">Rome, Italy</div>
-          <div class="time">October, 2022</div>
-        </td>
-        <td>
-            <img src="images/rome2.jpg">
-            <div class="location">Rome, Italy</div>
-            <div class="time">October, 2022</div>
-          </td>
-          <td>
-            <img src="images/rome3.jpg">
-            <div class="location">Rome, Italy</div>
-            <div class="time">October, 2022</div>
-          </td>
-          <td>
-            <img src="images/napoli.jpg">
-            <div class="location">Napoli, Italy</div>
-            <div class="time">October, 2022</div>
-          </td>
-          <td>
-            <img src="images/amalfi.jpg">
-            <div class="location">Sorrento, Italy</div>
-            <div class="time">October, 2022</div>
-          </td>
+    <main>
+      <section class="intro container">
+        <h1>Memories</h1>
+        <p>A small collection of visual memories from places I have been.</p>
+      </section>
 
+      <section class="year-section gallery-container">
+        <div class="year-head">
+          <h2>2023</h2>
+          <span>Portugal</span>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/albufeira.jpg" alt="Albufeira, Portugal" loading="lazy">
+            <figcaption>Albufeira, Portugal</figcaption>
+          </figure>
+          <figure>
+            <img src="images/olhao.png" alt="Olhao, Portugal" loading="lazy">
+            <figcaption>Olhao, Portugal</figcaption>
+          </figure>
+          <figure>
+            <img src="images/faro.jpg" alt="Faro, Portugal" loading="lazy">
+            <figcaption>Faro, Portugal</figcaption>
+          </figure>
+          <figure>
+            <img src="images/desert_island.jpg" alt="Desert Island, Portugal" loading="lazy">
+            <figcaption>Desert Island, Portugal</figcaption>
+          </figure>
+          <figure>
+            <img src="images/desert_island2.jpg" alt="Desert Island, Portugal" loading="lazy">
+            <figcaption>Desert Island, Portugal</figcaption>
+          </figure>
+        </div>
+      </section>
 
-        </tr>
-      
-    <tr>
-        <td>
-          <img src="images/ams1.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams2.JPG">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams3.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams4.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams5.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        </tr>
+      <section class="year-section gallery-container">
+        <div class="year-head">
+          <h2>2022</h2>
+          <span>Italy</span>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/rome.jpg" alt="Rome, Italy" loading="lazy">
+            <figcaption>Rome, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rome2.jpg" alt="Rome, Italy" loading="lazy">
+            <figcaption>Rome, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rome3.jpg" alt="Rome, Italy" loading="lazy">
+            <figcaption>Rome, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="images/napoli.jpg" alt="Napoli, Italy" loading="lazy">
+            <figcaption>Napoli, Italy</figcaption>
+          </figure>
+          <figure>
+            <img src="images/amalfi.jpg" alt="Sorrento, Italy" loading="lazy">
+            <figcaption>Sorrento, Italy</figcaption>
+          </figure>
+        </div>
+      </section>
 
-          <tr>
-        <td>
-          <img src="images/ams6.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams7.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams8.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams9.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        <td>
-          <img src="images/ams10.jpg">
-          <div class="location">Amsterdam, Netherlands</div>
-          <div class="time">2021</div>
-        </td>
-        </tr>
-  
-          <tr>
-        <td>
-          <img src="images/tenerife1.JPG">
-          <div class="location">Tenerife, Spain</div>
-          <div class="time">2019</div>
-        </td>
-        <td>
-          <img src="images/tenerife2.JPG">
-          <div class="location">Tenerife, Spain</div>
-          <div class="time">2019</div>
-        </td>
-         <td>
-          <img src="images/tenerife5.JPG">
-          <div class="location">Tenerife, Spain</div>
-          <div class="time">2019</div>
-        </td>
-        <td>
-          <img src="images/tenerife6.JPG">
-          <div class="location">Tenerife, Spain</div>
-          <div class="time">2019</div>
-        </td>
-        <td>
-          <img src="images/tenerife7.JPG">
-          <div class="location">Tenerife, Spain</div>
-          <div class="time">2019</div>
-        </td>
-        </tr>
+      <section class="year-section gallery-container">
+        <div class="year-head">
+          <h2>2021</h2>
+          <span>Amsterdam, Netherlands</span>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/ams1.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams2.JPG" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams3.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams4.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams5.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams6.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams7.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams8.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams9.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+          <figure>
+            <img src="images/ams10.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <figcaption>Amsterdam, Netherlands</figcaption>
+          </figure>
+        </div>
+      </section>
 
-    </table>
+      <section class="year-section gallery-container">
+        <div class="year-head">
+          <h2>2019</h2>
+          <span>Tenerife, Spain</span>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/tenerife1.JPG" alt="Tenerife, Spain" loading="lazy">
+            <figcaption>Tenerife, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tenerife2.JPG" alt="Tenerife, Spain" loading="lazy">
+            <figcaption>Tenerife, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tenerife5.JPG" alt="Tenerife, Spain" loading="lazy">
+            <figcaption>Tenerife, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tenerife6.JPG" alt="Tenerife, Spain" loading="lazy">
+            <figcaption>Tenerife, Spain</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tenerife7.JPG" alt="Tenerife, Spain" loading="lazy">
+            <figcaption>Tenerife, Spain</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const key = 'pref-theme';
+      const setTheme = t => document.documentElement.setAttribute('data-theme', t);
+      const saved = localStorage.getItem(key);
+      if (saved) setTheme(saved);
+
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+        localStorage.setItem(key, next);
+      });
+    </script>
   </body>
 </html>
