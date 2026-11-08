@@ -165,7 +165,7 @@ def read_profile(doc):
 
     patents = []
     for record in doc.first(id='patents').all('article', cls='patent'):
-        source = links(record)[0]
+        source = links(record.first(cls='patent-citation'))[0]
         patents.append({'title': record.first('h3').text(),
                         'authors': [a.strip() for a in record.first(cls='authors').text().split(',')],
                         'originalCitationLabel': source['label'], 'url': source['url']})

@@ -256,7 +256,8 @@ figcaption {
   max-width: 720px;
   margin: 20px 0 0;
 }
-.research-papers {
+.research-papers,
+.patent-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -322,8 +323,7 @@ figcaption {
 .section-link span {
   margin-left: 10px;
 }
-#experience,
-#patents {
+#experience {
   max-width: 760px;
 }
 .news-section {
@@ -456,7 +456,10 @@ summary span {
   margin-bottom: 4px;
 }
 .patent {
-  margin-bottom: 35px;
+  min-width: 0;
+}
+.patent .figure-link {
+  margin-bottom: 24px;
 }
 .patent h3 {
   font-size: 23px;
@@ -467,12 +470,14 @@ summary span {
   margin: 10px 0 0;
 }
 .people-list {
-  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 40px;
 }
 .person {
   position: relative;
   padding-left: 80px;
-  margin-bottom: 28px;
+  min-width: 0;
 }
 .person-image {
   position: absolute;
@@ -594,7 +599,9 @@ summary span {
   .portrait-photo {
     width: 145px;
   }
-  .research-papers {
+  .research-papers,
+  .patent-grid,
+  .people-list {
     gap: 32px;
   }
   .paper-copy h3 {
@@ -689,6 +696,10 @@ summary span {
   }
   .research-papers {
     display: block;
+  }
+  .patent-grid,
+  .people-list {
+    grid-template-columns: minmax(0, 1fr);
   }
   .research-paper {
     margin-bottom: 36px;

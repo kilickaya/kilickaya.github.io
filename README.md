@@ -13,6 +13,6 @@ python3 scripts/build-profile.py --check
 
 The generator reads the visible HTML and writes `profile.md`, `profile.json`, `llms.txt`, `publications.bib`, `robots.txt`, `sitemap.xml`, and the marked metadata blocks in both pages. It needs only Python’s standard library. Year-only dates stay year-only; missing values stay unspecified. It does not invent author lists, dates, employment status, metrics, or academic identifiers. `llms.txt` is a supplemental discovery aid, not a requirement for using the other exports.
 
-Publication concept illustrations live in `images/research/`. Regenerate them with `python3 scripts/draw-publications.py`; their source notes are in `images/research/README.md`.
+Publication and patent concept illustrations live in `images/research/` and `images/patents/`. Regenerate both sets with `python3 scripts/draw-publications.py`; source notes are in each image directory’s `README.md`.
 
 See `CONTENT-NOTES.md` for content provenance and details awaiting verification. Existing paper, slide, patent, supervision, CV and photography links are retained.

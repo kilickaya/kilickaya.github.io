@@ -51,3 +51,9 @@ The separate Selected Research and Publications sections are combined into one R
 The site keeps section navigation visible during long-page reading. On smaller screens the brand scrolls out naturally while the links remain available, without changing the header's layout height mid-scroll. News, Experience, Research, Patents, People and Memories are directly accessible; the current section is indicated without rewriting browser history. Anchors account for the navigation height, and “Back to top” targets an explicit page anchor. Section jumps are immediate while wheel, touch and keyboard scrolling retain browser behavior. No scroll snapping or scroll interception is used.
 
 The pass trims section and entry spacing while retaining the existing body text sizes, all research entries and all photographs. Image dimensions remain explicit and the two local fonts are preloaded to reduce late layout changes. The keyboard skip link focuses the main content. Research profile exports remain identical to their content before this layout pass.
+
+## Patent illustrations and compact mentorship
+
+Patents use four matching concept drawings and a two-column layout at the same width as Research. Each entry retains its title, inventors and original citation link, without a new description. The shared illustration generator owns both image sets; patent concept sources are documented in `images/patents/README.md`.
+
+People & Mentorship uses two columns on wider screens, retaining all seven people, photographs, projects, dates and links. Both grids stack below 621 pixels for readable mobile layouts.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw the site's eight conceptual publication illustrations. No dependencies."""
+"""Draw the site's publication and patent concept illustrations. No dependencies."""
 from pathlib import Path
 from html import escape
 
@@ -45,7 +45,7 @@ def cube(x,y):
 def phone(x,y,fill=PAPER,rotation=0):
     s=box(-22,-38,44,76,fill,INK,8)+box(-15,-28,30,38,OAT,INK,3)+line(-7,20,7,20)+circle(0,30,2,INK)
     return f'<g transform="translate({x} {y}) rotate({rotation})">{s}</g>'
-def save(name,title,desc,content):
+def save(name,title,desc,content,directory=DEST):
     svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
 <title id="title">{escape(title)}</title>
 <desc id="desc">{escape(desc)}</desc>
@@ -53,7 +53,8 @@ def save(name,title,desc,content):
 <rect width="800" height="500" fill="{OAT}"/>
 <g fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, sans-serif">{content}</g>
 </svg>\n'''
-    (DEST / f'{name}.svg').write_text(svg)
+    directory.mkdir(parents=True, exist_ok=True)
+    (directory / f'{name}.svg').write_text(svg)
 
 # HyTAS: spectral data and a search space, with one candidate architecture selected.
 s=cube(67,212)+arrow(212,247,260,247)
@@ -182,3 +183,54 @@ s+=text(140,412,'Whole-slide image',25)+text(400,412,'Neural network',25)+text(6
 save('digital-pathology','From whole-slide tissue images to recurrence risk','A conceptual whole-slide tissue image is passed into a neural network that outputs a recurrence risk score. The marker is illustrative and gives no numerical or clinical prediction.',s)
 
 print(f'Wrote eight SVG illustrations to {DEST}')
+
+# Patent concepts share the publication palette, proportions and drawing helpers.
+PATENTS = DEST.parent / 'patents'
+
+def human(x,y):
+    return group(circle(0,-43,12,PAPER,INK)+path('M0 -29 L0 22 M0 -10 L34 7 M0 22 L-18 53 M0 22 L23 53'),x,y)
+
+def scene(x,y,highlight=False):
+    s=box(0,0,170,160,PAPER,INK,10)+human(60,83)
+    s+=box(100,70,35,45,SAND,CLAY,5)
+    if highlight:s+=box(91,61,53,63,'none',SAGE,5,extra='stroke-width="3"')
+    return group(s,x,y)
+
+# A visual query and conversational refinement select a different matching item.
+s=box(55,174,148,138,PAPER,INK,10)
+s+=path('M80 255 L106 224 L122 238 L166 251 L179 272 L80 272 Z',INK,SAND)
+s+=box(234,100,222,79,PAPER,INK,12)
+s+=path('M267 179 L267 196 L287 179',INK,PAPER)
+s+=line(255,127,428,127,STONE)+line(255,148,374,148,STONE)
+s+=arrow(225,250,293,250)+network(322,220,102,70,PAPER,SAGE)+arrow(455,250,514,250)
+for y,color in [(130,PAPER),(244,PALE)]:
+ s+=box(550,y,190,94,color,SAGE if y==244 else INK,10)
+ s+=path(f'M578 {y+54} L600 {y+29} L618 {y+42} L701 {y+55} L711 {y+71} L578 {y+71} Z',INK,SAND if y==130 else PALE)
+s+=text(130,413,'Visual query',27)+text(374,413,'Refine',27)+text(643,413,'Matches',27)
+save('conversational-search','Visual search through conversation','A visual query and a conversation bubble guide a network toward refined image matches. Conceptual illustration, not a literal interface or architecture.',s,PATENTS)
+
+# Human cues guide the location of the interacted object.
+s=scene(45,170)+arrow(237,250,294,250)+network(329,207,111,86,PAPER,SAGE)+arrow(474,250,529,250)+scene(573,170,True)
+s+=text(131,413,'Human cues',27)+text(385,413,'Locate',27)+text(657,413,'Object',27)
+save('object-localization','Locating an interacted object','Human and hand cues pass through a conceptual network, highlighting the interacted object in the image.',s,PATENTS)
+
+# Distinct subject and object branches meet in a relation representation.
+s=box(60,129,142,112,PAPER,INK,10)+human(127,181)
+s+=box(60,276,142,99,PAPER,INK,10)+box(111,301,40,49,SAND,CLAY,6)
+s+=path('M223 185 C268 185 264 250 307 250',SAGE)+path('M223 326 C268 326 264 250 307 250',CLAY)
+s+=network(334,208,113,84,PAPER,SAGE)+arrow(476,250,536,250)
+s+=circle(589,250,22,PALE,SAGE)+circle(715,250,22,SAND,CLAY)+line(613,250,690,250)+circle(652,250,8,PAPER,INK)
+s+=text(131,100,'Subject',25)+text(131,417,'Object',25)+text(391,417,'Recognize',25)+text(651,417,'Interaction',25)
+save('interaction-recognition','Recognizing subject-object interactions','Subject and object branches converge in a network and form a relationship representation. A conceptual view of interaction recognition.',s,PATENTS)
+
+# Surrounding scene context informs learning about a human-object pair.
+s=box(54,118,224,246,PAPER,INK,12)
+s+=line(73,309,257,309,STONE)+box(78,146,52,55,PALE,SAGE,5)+line(104,146,104,201,SAGE)+line(78,174,130,174,SAGE)
+s+=human(146,241)+box(185,230,35,43,SAND,CLAY,5)
+s+=box(106,181,130,130,'none',SAGE,8,extra='stroke-dasharray="6 8"')
+s+=arrow(303,250,357,250)+network(390,206,105,88,PAPER,SAGE)+arrow(526,250,578,250)
+s+=box(607,179,135,143,PAPER,INK,12)+human(645,241)+box(689,232,27,35,SAND,CLAY,5)
+s+=path('M647 185 C679 168 708 183 710 207',SAGE)+path('M710 207 L701 199 M710 207 L716 197',SAGE)
+s+=text(167,413,'Scene context',27)+text(444,413,'Learn',27)+text(675,413,'Interaction',27)
+save('context-learning','Learning interactions from context','Surrounding scene information informs a network learning about a human-object interaction. Conceptual illustration, not a performance result.',s,PATENTS)
+print(f'Wrote four patent SVG illustrations to {PATENTS}')
