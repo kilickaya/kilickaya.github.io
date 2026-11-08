@@ -1,0 +1,463 @@
+{
+  "name": "Mert Kilickaya",
+  "identity": "Autonomous vision researcher",
+  "researchGoal": "I am an AI researcher. My goal is to help automate vision. Can we build models that curate their own data, extract their own supervision, and adapt on the fly to changes in the real world?",
+  "researchOverview": "I want visual models to take a more active role in their own learning: choosing useful data, learning from new observations, and adapting efficiently as conditions change. This goal connects my work in self-supervised, continual, and vision-language learning with applications from medical diagnostics to industrial visual intelligence.",
+  "researchTopics": [
+    "Data curation",
+    "Self-supervised visual representation learning",
+    "Continual learning",
+    "Efficient adaptation",
+    "Multimodal and vision-language learning",
+    "Applied computer vision"
+  ],
+  "url": "https://kilickaya.github.io/",
+  "imageURL": "https://kilickaya.github.io/images/mert-selfie.jpeg",
+  "profiles": [
+    {
+      "label": "Email",
+      "url": "mailto:kilickayamert@gmail.com"
+    },
+    {
+      "label": "CV",
+      "url": "https://kilickaya.github.io/resume/resume.pdf"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=MBMjO0sAAAAJ&hl=en&oi=ao"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mert-kilickaya/"
+    }
+  ],
+  "currentRole": {
+    "organization": "Greyparrot",
+    "roleTitle": "Senior Research Engineer",
+    "researchFocus": "Industrial visual intelligence",
+    "location": null,
+    "dateLabel": "October 2026 — present",
+    "startDate": "2026-10",
+    "endDate": null,
+    "current": true,
+    "links": [],
+    "sourceURL": "https://kilickaya.github.io/#experience"
+  },
+  "education": {
+    "credential": "PhD in computer vision",
+    "institution": "University of Amsterdam",
+    "lab": "Qualcomm Labs",
+    "labURL": "https://ivi.fnwi.uva.nl/quva/",
+    "supervisor": {
+      "name": "Arnold Smeulders",
+      "url": "https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&hl=en"
+    },
+    "description": "I completed my PhD in computer vision at the University of Amsterdam’s Qualcomm Labs, supervised by Arnold Smeulders. Since then, I’ve been working in industry as a research engineer."
+  },
+  "career": [
+    {
+      "organization": "Greyparrot",
+      "roleTitle": "Senior Research Engineer",
+      "researchFocus": "Industrial visual intelligence",
+      "location": null,
+      "dateLabel": "October 2026 — present",
+      "startDate": "2026-10",
+      "endDate": null,
+      "current": true,
+      "links": [],
+      "sourceURL": "https://kilickaya.github.io/#experience"
+    },
+    {
+      "organization": "Agendia",
+      "roleTitle": "ML Researcher",
+      "researchFocus": "Biomarker Discovery",
+      "location": "Amsterdam, Netherlands",
+      "dateLabel": "2023 — October 2026",
+      "startDate": "2023",
+      "endDate": "2026-10",
+      "current": false,
+      "links": [],
+      "sourceURL": "https://kilickaya.github.io/#experience"
+    },
+    {
+      "organization": "Eindhoven University of Technology",
+      "roleTitle": "ML Researcher",
+      "researchFocus": "Continual Pretraining Agents",
+      "location": "Netherlands",
+      "dateLabel": "2022 — 2023",
+      "startDate": "2022",
+      "endDate": "2023",
+      "current": false,
+      "links": [
+        {
+          "label": "Learning to Learn Lab",
+          "url": "https://dai.win.tue.nl/team/5/"
+        }
+      ],
+      "sourceURL": "https://kilickaya.github.io/#experience"
+    },
+    {
+      "organization": "Huawei Visual Search Lab",
+      "roleTitle": "Research Intern",
+      "researchFocus": "Multimodal Learning",
+      "location": "Helsinki, Finland",
+      "dateLabel": "March 2021 — January 2022",
+      "startDate": "2021-03",
+      "endDate": "2022-01",
+      "current": false,
+      "links": [],
+      "sourceURL": "https://kilickaya.github.io/#experience"
+    },
+    {
+      "organization": "Qualcomm Labs, University of Amsterdam",
+      "roleTitle": "PhD Researcher",
+      "researchFocus": "Deep Learning for Vision",
+      "location": "Netherlands",
+      "dateLabel": "2017 — 2022",
+      "startDate": "2017",
+      "endDate": "2022",
+      "current": false,
+      "links": [
+        {
+          "label": "Qualcomm Labs",
+          "url": "https://ivi.fnwi.uva.nl/quva/"
+        },
+        {
+          "label": "Arnold Smeulders",
+          "url": "https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&hl=en"
+        }
+      ],
+      "sourceURL": "https://kilickaya.github.io/#experience"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026-10",
+      "text": "Our work at Agendia on AI-driven digital pathology for the 70-gene recurrence signature was presented at ESMO 2026, the most prestigious conference in Oncology.",
+      "links": [
+        {
+          "label": "AI-driven digital pathology for the 70-gene recurrence signature",
+          "url": "https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/"
+        }
+      ]
+    },
+    {
+      "date": "2026-10",
+      "text": "I joined Greyparrot as a Senior Research Engineer.",
+      "links": []
+    }
+  ],
+  "earlierNews": [
+    {
+      "date": "2024-10",
+      "text": "Honored to be an outstanding reviewer for ECCV'24!",
+      "links": [
+        {
+          "label": "Honored to be an outstanding reviewer for ECCV'24!",
+          "url": "https://kilickaya.github.io/resume/eccv_reviewer.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2024-07",
+      "text": "Our work on Transformer Architecture Search is accepted at ECCV'24!",
+      "links": [
+        {
+          "label": "Our work on Transformer Architecture Search is accepted at ECCV'24!",
+          "url": "https://arxiv.org/pdf/2407.16269"
+        }
+      ]
+    },
+    {
+      "date": "2023-09",
+      "text": "Our work on Locality-aware Vision-Transformer is accepted at BMVC'23!",
+      "links": [
+        {
+          "label": "Our work on Locality-aware Vision-Transformer is accepted at BMVC'23!",
+          "url": "https://arxiv.org/pdf/2309.01561.pdf"
+        }
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "id": "publication-1",
+      "title": "HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis",
+      "authors": [
+        "Fangqin Zhou",
+        "Mert Kilickaya",
+        "Joaquin Vanschoren",
+        "Ran Piao"
+      ],
+      "venue": "ECCV 2024",
+      "year": 2024,
+      "description": "We present HyTAS, a quick method for hyperspectral vision transformer architecture search.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/2407.16269"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/zhoufangqin/HyTAS/tree/main"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/hytas.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-1"
+    },
+    {
+      "id": "publication-2",
+      "title": "Locality-Aware Hyperspectral Classification",
+      "authors": [
+        "Fangqin Zhou",
+        "Mert Kilickaya",
+        "Joaquin Vanschoren"
+      ],
+      "venue": "BMVC 2023",
+      "year": 2023,
+      "description": "We propose HyLITE, a vision-transformer for hyperspectral image classification.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/2309.01561.pdf"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/zhoufangqin/HyLITE"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/hylite.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-2"
+    },
+    {
+      "id": "publication-3",
+      "title": "Towards Label-Efficient Incremental Learning: A Survey",
+      "authors": [
+        "Mert Kilickaya",
+        "Joost van de Weijer",
+        "Yuki Asano"
+      ],
+      "venue": "Preprint 2023",
+      "year": 2023,
+      "description": "We survey semi-, few-shot, and self-supervised incremental learning.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/2302.00353.pdf"
+        },
+        {
+          "label": "Slides",
+          "url": "https://kilickaya.github.io/resume/survey.pdf"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kilickaya/label-efficient-il"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/label-efficient-learning.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-3"
+    },
+    {
+      "id": "publication-4",
+      "title": "Are Labels Needed for Incremental Instance Learning?",
+      "authors": [
+        "Mert Kilickaya",
+        "Joaquin Vanschoren"
+      ],
+      "venue": "CVPRW 2023 (Oral)",
+      "year": 2023,
+      "description": "We introduce VINIL, a self-supervised incremental instance learner.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/2301.11417.pdf"
+        },
+        {
+          "label": "Slides",
+          "url": "https://kilickaya.github.io/resume/slides_vinil.pdf"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/vinil.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-4"
+    },
+    {
+      "id": "publication-5",
+      "title": "Human-Object Interaction Detection via Weak Supervision",
+      "authors": [
+        "Mert Kilickaya",
+        "Arnold Smeulders"
+      ],
+      "venue": "BMVC 2021",
+      "year": 2021,
+      "description": "We introduce Align-Former to detect human-object interactions from an image.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/2112.00492.pdf"
+        },
+        {
+          "label": "Slides",
+          "url": "https://kilickaya.github.io/resume/slides_bmvc21.pdf"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/align-former.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-5"
+    },
+    {
+      "id": "publication-6",
+      "title": "Structured Visual Search via Composition-aware Learning",
+      "authors": [
+        "Mert Kilickaya",
+        "Arnold Smeulders"
+      ],
+      "venue": "WACV 2021",
+      "year": 2021,
+      "description": "We introduce composition-aware learning to improve visual image search.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://openaccess.thecvf.com/content/WACV2021/papers/Kilickaya_Structured_Visual_Search_via_Composition-Aware_Learning_WACV_2021_paper.pdf"
+        },
+        {
+          "label": "Slides",
+          "url": "https://kilickaya.github.io/resume/slides_wacv21.pdf"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/composition-aware-search.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-6"
+    },
+    {
+      "id": "publication-7",
+      "title": "Re-evaluating Automatic Metrics for Image Captioning",
+      "authors": [
+        "Mert Kilickaya",
+        "Aykut Erdem",
+        "Nazli Ikizler-Cinbis",
+        "Erkut Erdem"
+      ],
+      "venue": "EACL 2017",
+      "year": 2017,
+      "description": "We propose Word-Mover Distance to evaluate image captioning.",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/pdf/1612.07600.pdf"
+        },
+        {
+          "label": "Slides",
+          "url": "https://kilickaya.github.io/resume/slides_eacl17.pdf"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/caption-evaluation.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-7"
+    }
+  ],
+  "patents": [
+    {
+      "title": "Visual Image Search via Conversational Interaction (Huawei)",
+      "authors": [
+        "Mert Kilickaya",
+        "Baiqiang XIA"
+      ],
+      "originalCitationLabel": "WO Patent, 2022",
+      "url": "https://patents.google.com/patent/WO2023117041A1/"
+    },
+    {
+      "title": "Network for Interacted Object Localization (Qualcomm)",
+      "authors": [
+        "Mert Kilickaya",
+        "Arnold Smeulders"
+      ],
+      "originalCitationLabel": "US Patent, 2022",
+      "url": "https://patents.google.com/patent/US20220414371A1/"
+    },
+    {
+      "title": "Subject-Object Interaction Recognition Model (Qualcomm)",
+      "authors": [
+        "Mert Kilickaya",
+        "Stratis Gavves",
+        "Arnold Smeulders"
+      ],
+      "originalCitationLabel": "US Patent, 2022",
+      "url": "https://patents.google.com/patent/US11481576B2/"
+    },
+    {
+      "title": "Context-driven Learning of Human-object Interactions (Qualcomm)",
+      "authors": [
+        "Mert Kilickaya",
+        "Noureldien Hussein",
+        "Stratis Gavves",
+        "Arnold Smeulders"
+      ],
+      "originalCitationLabel": "US Patent, 2021",
+      "url": "https://patents.google.com/patent/EP4058930A1/"
+    }
+  ],
+  "mentorship": [
+    {
+      "name": "Evangelos Tsimpouris",
+      "profileURL": "https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl",
+      "degreeAndInstitution": "MSc, TU/e",
+      "period": "2023-2024",
+      "project": "Learning to Transfer for Continual Learning",
+      "projectURL": "https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl"
+    },
+    {
+      "name": "Fangqin Zhou",
+      "profileURL": "https://research.tue.nl/en/persons/fangqin-zhou",
+      "degreeAndInstitution": "PhD, TU/e",
+      "period": "2022-2024",
+      "project": "Locality-Aware Vision Transformers",
+      "projectURL": "https://arxiv.org/abs/2309.01561v1"
+    },
+    {
+      "name": "Ran Piao",
+      "profileURL": "https://www.linkedin.com/in/ran-piao-a0a1a6281/?originalSubdomain=nl",
+      "degreeAndInstitution": "MSc, TU/e",
+      "period": "2022-2023",
+      "project": "Rapid Transformer Architecture Search without Training",
+      "projectURL": "https://drive.google.com/file/d/10ntRevPI_mF00oRE9_LhQrNr09hnHNuC/view"
+    },
+    {
+      "name": "Tommie Kerssies",
+      "profileURL": "https://scholar.google.com/citations?user=rrJn-eEAAAAJ&hl=en",
+      "degreeAndInstitution": "MSc, TU/e",
+      "period": "2022-2023",
+      "project": "Test Time Adaptation",
+      "projectURL": "https://arxiv.org/pdf/2208.08767.pdf"
+    },
+    {
+      "name": "Ceren Gok-Yildirim",
+      "profileURL": "https://research.tue.nl/en/persons/ceren-g%C3%B6k",
+      "degreeAndInstitution": "PhD, TU/e",
+      "period": "2022-2023",
+      "project": "Learning to Adapt for Continual Learning",
+      "projectURL": "https://arxiv.org/pdf/2303.13113.pdf"
+    },
+    {
+      "name": "Kishan Parshotam",
+      "profileURL": "https://scholar.google.com/citations?user=75hA5MQAAAAJ&hl=en",
+      "degreeAndInstitution": "MSc, UvA",
+      "period": "2020-2021",
+      "project": "Continual Learning of Object Instances",
+      "projectURL": "https://openaccess.thecvf.com/content_CVPRW_2020/papers/w15/Parshotam_Continual_Learning_of_Object_Instances_CVPRW_2020_paper.pdf"
+    },
+    {
+      "name": "Tarun Krishna",
+      "profileURL": "https://krishnatarun.github.io/",
+      "degreeAndInstitution": "MSc, UvA",
+      "period": "2019-2020",
+      "project": "Learning to rotate, scale and shift visual objects via disentanglement",
+      "projectURL": "https://drive.google.com/file/d/1klDGsZJFHzIJ1v2yQc-pCVPJESA-Rl8p/view"
+    }
+  ],
+  "photographyURL": "https://kilickaya.github.io/images.html",
+  "sourceNotes": [
+    "Research goals describe a direction of work, not a claim of solved or deployed capabilities.",
+    "Dates retain their available precision. A null endDate for a current role means ongoing; other null fields mean no value is supplied on the website.",
+    "The CV is an existing PDF and may lag the career information on the homepage.",
+    "The ESMO 2026 item is news linked to Agendia’s announcement; a full author list and journal record are not supplied.",
+    "The publication archive is the archive on this website, not a claim to include every subsequent work.",
+    "Patent citation labels are preserved from the original archive and are not independently verified jurisdiction or grant dates."
+  ]
+}

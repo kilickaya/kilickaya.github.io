@@ -1,606 +1,1208 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mert Kilickaya</title>
-  <link rel="icon" type="image/jpg" href="images/avatar3.JPG" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #0f172a;
-      --muted: #475569;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --accent: #0ea5e9;
-      --accent-fg: #0c4a6e;
-      --ring: #38bdf8;
-      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(0,0,0,.05);
-      --radius: 12px;
-      --container: 1040px;
-      --step--1: clamp(.88rem,.86rem + .1vw, .95rem);
-      --step-0: clamp(1rem,.98rem + .15vw,1.075rem);
-      --step-1: clamp(1.25rem,1.18rem + .4vw,1.45rem);
-      --step-2: clamp(1.5rem,1.42rem + .6vw,1.8rem);
-      --step-3: clamp(1.9rem,1.8rem + 1vw,2.3rem);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Mert Kilickaya is an autonomous vision researcher and Senior Research Engineer at Greyparrot, with a PhD in computer vision from the University of Amsterdam."
+    />
+    <title>Mert Kilickaya — Autonomous Vision Researcher</title>
+    <link rel="icon" href="images/mert-selfie.jpeg" type="image/jpeg" />
+    <link
+      rel="preload"
+      href="assets/fonts/editorial/dm-sans.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/editorial/newsreader.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/editorial.css" />
+    <script src="assets/js/editorial.js" defer></script>
+    <!-- Generated research metadata: scripts/build-profile.py -->
+    <link rel="canonical" href="https://kilickaya.github.io/" />
+    <link rel="alternate" type="text/markdown" href="https://kilickaya.github.io/profile.md" title="Research profile in Markdown" />
+    <link rel="alternate" type="application/json" href="https://kilickaya.github.io/profile.json" title="Structured research profile" />
+    <link rel="alternate" type="application/x-bibtex" href="https://kilickaya.github.io/publications.bib" title="Publication citations" />
+    <link rel="sitemap" type="application/xml" href="https://kilickaya.github.io/sitemap.xml" />
+    <meta name="author" content="Mert Kilickaya" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Mert Kilickaya — Autonomous Vision Researcher" />
+    <meta property="og:description" content="Mert Kilickaya is an autonomous vision researcher and Senior Research Engineer at Greyparrot, with a PhD in computer vision from the University of Amsterdam." />
+    <meta property="og:url" content="https://kilickaya.github.io/" />
+    <meta property="og:image" content="https://kilickaya.github.io/images/mert-selfie.jpeg" />
+    <meta property="og:image:alt" content="Mert Kilickaya" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" id="research-structured-data">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://kilickaya.github.io/#website",
+          "url": "https://kilickaya.github.io/",
+          "name": "Mert Kilickaya — Autonomous vision researcher",
+          "author": {
+            "@id": "https://kilickaya.github.io/#mert-kilickaya"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://kilickaya.github.io/#webpage",
+          "url": "https://kilickaya.github.io/",
+          "name": "Mert Kilickaya — Autonomous Vision Researcher",
+          "mainEntity": {
+            "@id": "https://kilickaya.github.io/#mert-kilickaya"
+          },
+          "isPartOf": {
+            "@id": "https://kilickaya.github.io/#website"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://kilickaya.github.io/#mert-kilickaya",
+          "name": "Mert Kilickaya",
+          "url": "https://kilickaya.github.io/",
+          "description": "I am an AI researcher. My goal is to help automate vision. Can we build models that curate their own data, extract their own supervision, and adapt on the fly to changes in the real world?",
+          "image": "https://kilickaya.github.io/images/mert-selfie.jpeg",
+          "jobTitle": "Senior Research Engineer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Greyparrot"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Amsterdam"
+          },
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "PhD in computer vision",
+            "credentialCategory": "Doctoral degree",
+            "description": "I completed my PhD in computer vision at the University of Amsterdam’s Qualcomm Labs, supervised by Arnold Smeulders. Since then, I’ve been working in industry as a research engineer."
+          },
+          "knowsAbout": [
+            "Data curation",
+            "Self-supervised visual representation learning",
+            "Continual learning",
+            "Efficient adaptation",
+            "Multimodal and vision-language learning",
+            "Applied computer vision"
+          ],
+          "sameAs": [
+            "https://scholar.google.com/citations?user=MBMjO0sAAAAJ&hl=en&oi=ao",
+            "https://www.linkedin.com/in/mert-kilickaya/"
+          ],
+          "email": "kilickayamert@gmail.com",
+          "mainEntityOfPage": {
+            "@id": "https://kilickaya.github.io/#webpage"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-1",
+          "headline": "HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Fangqin Zhou"
+            },
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Joaquin Vanschoren"
+            },
+            {
+              "@type": "Person",
+              "name": "Ran Piao"
+            }
+          ],
+          "datePublished": "2024",
+          "description": "We present HyTAS, a quick method for hyperspectral vision transformer architecture search.",
+          "url": "https://arxiv.org/pdf/2407.16269",
+          "image": "https://kilickaya.github.io/images/research/hytas.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "ECCV 2024"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-2",
+          "headline": "Locality-Aware Hyperspectral Classification",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Fangqin Zhou"
+            },
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Joaquin Vanschoren"
+            }
+          ],
+          "datePublished": "2023",
+          "description": "We propose HyLITE, a vision-transformer for hyperspectral image classification.",
+          "url": "https://arxiv.org/pdf/2309.01561.pdf",
+          "image": "https://kilickaya.github.io/images/research/hylite.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "BMVC 2023"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-3",
+          "headline": "Towards Label-Efficient Incremental Learning: A Survey",
+          "author": [
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Joost van de Weijer"
+            },
+            {
+              "@type": "Person",
+              "name": "Yuki Asano"
+            }
+          ],
+          "datePublished": "2023",
+          "description": "We survey semi-, few-shot, and self-supervised incremental learning.",
+          "url": "https://arxiv.org/pdf/2302.00353.pdf",
+          "image": "https://kilickaya.github.io/images/research/label-efficient-learning.svg",
+          "creativeWorkStatus": "Preprint"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-4",
+          "headline": "Are Labels Needed for Incremental Instance Learning?",
+          "author": [
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Joaquin Vanschoren"
+            }
+          ],
+          "datePublished": "2023",
+          "description": "We introduce VINIL, a self-supervised incremental instance learner.",
+          "url": "https://arxiv.org/pdf/2301.11417.pdf",
+          "image": "https://kilickaya.github.io/images/research/vinil.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "CVPRW 2023 (Oral)"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-5",
+          "headline": "Human-Object Interaction Detection via Weak Supervision",
+          "author": [
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Arnold Smeulders"
+            }
+          ],
+          "datePublished": "2021",
+          "description": "We introduce Align-Former to detect human-object interactions from an image.",
+          "url": "https://arxiv.org/pdf/2112.00492.pdf",
+          "image": "https://kilickaya.github.io/images/research/align-former.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "BMVC 2021"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-6",
+          "headline": "Structured Visual Search via Composition-aware Learning",
+          "author": [
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Arnold Smeulders"
+            }
+          ],
+          "datePublished": "2021",
+          "description": "We introduce composition-aware learning to improve visual image search.",
+          "url": "https://openaccess.thecvf.com/content/WACV2021/papers/Kilickaya_Structured_Visual_Search_via_Composition-Aware_Learning_WACV_2021_paper.pdf",
+          "image": "https://kilickaya.github.io/images/research/composition-aware-search.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "WACV 2021"
+          }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://kilickaya.github.io/#publication-7",
+          "headline": "Re-evaluating Automatic Metrics for Image Captioning",
+          "author": [
+            {
+              "@id": "https://kilickaya.github.io/#mert-kilickaya"
+            },
+            {
+              "@type": "Person",
+              "name": "Aykut Erdem"
+            },
+            {
+              "@type": "Person",
+              "name": "Nazli Ikizler-Cinbis"
+            },
+            {
+              "@type": "Person",
+              "name": "Erkut Erdem"
+            }
+          ],
+          "datePublished": "2017",
+          "description": "We propose Word-Mover Distance to evaluate image captioning.",
+          "url": "https://arxiv.org/pdf/1612.07600.pdf",
+          "image": "https://kilickaya.github.io/images/research/caption-evaluation.svg",
+          "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "EACL 2017"
+          }
+        }
+      ]
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --fg: #e5e7eb;
-        --muted: #94a3b8;
-        --card: #0f172a;
-        --border: #1f2937;
-        --accent: #38bdf8;
-        --accent-fg: #bae6fd;
-        --ring: #38bdf8;
-        --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
-      }
-    }
-    [data-theme="dark"] {
-      --bg: #0b1220;
-      --fg: #e5e7eb;
-      --muted: #94a3b8;
-      --card: #0f172a;
-      --border: #1f2937;
-      --accent: #38bdf8;
-      --accent-fg: #bae6fd;
-      --ring: #38bdf8;
-      --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.68;
-      font-size: var(--step-0);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    html { scroll-behavior: smooth; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a:focus { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
-    .container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: 20px; }
-    .stack { display: grid; gap: 22px; padding: 20px 0 0; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-    .section-title {
-      font-size: var(--step-2);
-      margin: 0 0 14px 0;
-      letter-spacing: .2px;
-    }
-    main section[id] { scroll-margin-top: 88px; }
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(180%) blur(8px);
-      background: color-mix(in hsl, var(--bg) 92%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 10px 0;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .2px;
-    }
-    .avatar {
-      width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
-    }
-    .links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .links a {
-      padding: 6px 10px; border-radius: 999px; border: 1px solid transparent;
-      color: var(--muted);
-      font-size: var(--step--1);
-    }
-    .links a:hover { background: color-mix(in hsl, var(--accent) 10%, transparent); color: var(--fg); text-decoration: none; }
-    .links a.active { border-color: var(--border); }
-    .toggle {
-      border: 1px solid var(--border); background: var(--card); color: var(--fg);
-      border-radius: 999px; padding: 6px 10px; cursor: pointer;
-    }
-    .hero {
-      padding: 28px 0 6px;
-    }
-    .intro {
-      display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: start;
-    }
-    .intro .intro-avatar {
-      width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
-    }
-    .intro h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 8px 0; }
-    .intro p { max-width: 72ch; margin: 0 0 12px 0; }
-    .muted { color: var(--muted); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-    .pill-row a {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
-      background: var(--card); border: 1px solid var(--border);
-    }
-    .grid {
-      display: grid; gap: 16px;
-    }
-    @media (min-width: 880px) {
-      .grid-2 { grid-template-columns: 1fr 1fr; }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    }
-    .timeline { list-style: none; padding: 0; margin: 0; }
-    .timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 14px; align-items: start; padding: 10px 0; border-bottom: 1px dashed var(--border); }
-    .timeline li:last-child { border-bottom: 0; }
-    .badge { font-weight: 600; color: var(--accent-fg); background: color-mix(in hsl, var(--accent) 18%, transparent); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; width: fit-content; }
-    .media {
-      width: 90px; height: 90px; border-radius: 10px; object-fit: contain; background: #fff; border: 1px solid var(--border);
-    }
-    .media.round { border-radius: 50%; object-fit: cover; }
-    .item {
-      display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: start;
-    }
-    .item + .item { margin-top: 16px; }
-    .title { font-size: var(--step-1); margin: 0 0 6px 0; }
-    .sub { font-weight: 600; color: var(--muted); margin-bottom: 6px; }
-    .meta { font-weight: 600; }
-    .links-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-    .section-note {
-      color: var(--muted);
-      margin: -4px 0 14px 0;
-      max-width: 72ch;
-    }
-    #research > .grid > .card,
-    #patents > .grid > .card,
-    #supervision > .grid > .card {
-      box-shadow: none;
-      background: color-mix(in hsl, var(--card) 94%, var(--bg));
-      padding: 18px;
-    }
-    #research .grid,
-    #patents .grid,
-    #supervision .grid {
-      gap: 12px;
-    }
-    #research .item {
-      grid-template-columns: 80px 1fr;
-      gap: 14px;
-    }
-    #research .media {
-      width: 72px;
-      height: 72px;
-    }
-    #research .title,
-    #patents .title,
-    #supervision .title {
-      line-height: 1.35;
-    }
-    #research .sub,
-    #research .meta,
-    #patents .sub,
-    #supervision .meta {
-      font-size: var(--step--1);
-    }
-    #research .links-row {
-      margin-top: 6px;
-    }
-    #experience {
-      position: relative;
-    }
-    #experience::before {
-      content: "";
-      position: absolute;
-      left: 64px;
-      top: 76px;
-      bottom: 24px;
-      width: 1px;
-      background: color-mix(in hsl, var(--border) 85%, transparent);
-    }
-    #experience .item {
-      position: relative;
-      grid-template-columns: 92px 1fr;
-      gap: 20px;
-      padding-left: 0;
-    }
-    #experience .item::before {
-      content: "";
-      position: absolute;
-      left: 60px;
-      top: 36px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid var(--bg);
-      box-shadow: 0 0 0 1px var(--border);
-    }
-    #experience .media {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      margin-left: 16px;
-    }
-    #experience .meta {
-      color: var(--accent-fg);
-      font-size: var(--step--1);
-      margin-bottom: 4px;
-    }
-    footer {
-      border-top: 1px solid var(--border);
-      margin-top: 48px;
-    }
-    .foot { padding: 20px 0; color: var(--muted); font-size: var(--step--1); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    @media (max-width: 640px) {
-      .intro { grid-template-columns: 1fr; }
-      .item, .timeline li { grid-template-columns: 1fr; }
-      #experience::before { display: none; }
-      #experience .item::before { display: none; }
-      #experience .media { margin-left: 0; }
-      .nav { align-items: flex-start; }
-      .links {
-        gap: 8px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        width: 100%;
-      }
-      .links a, .toggle { white-space: nowrap; }
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .card, .pill-row a, .links a, .toggle { transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
-      .links a:hover { transform: translateY(-1px); }
-      .card:hover { transform: translateY(-2px); }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img class="avatar" src="images/avatar3.JPG" alt="Mert Kilickaya" />
-        <span>Mert Kilickaya</span>
-      </div>
-      <nav class="links" id="topnav">
-        <a href="#bio">Bio</a>
+    </script>
+    <!-- End generated research metadata -->
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="#bio"
+        >Mert Kilickaya<span>Autonomous vision researcher</span></a
+      >
+      <nav aria-label="Main navigation">
         <a href="#news">News</a>
         <a href="#experience">Experience</a>
         <a href="#research">Research</a>
         <a href="#patents">Patents</a>
-        <a href="#supervision">Supervision</a>
-        <a href="images.html">Memories</a>
-        <button class="toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+        <a href="#supervision">People</a>
+        <a href="#memories">Memories</a>
       </nav>
-    </div>
-  </header>
-
-  <main class="container stack">
-    <section id="bio" class="card hero">
-      <div class="intro">
-        <img class="intro-avatar" src="images/avatar3.JPG" alt="Mert Kilickaya" />
-        <div>
-          <h1>Mert Kilickaya</h1>
-          <p>Hello! I am an AI researcher. My goal is to help automate knowledge discovery, and then turn the discovered knowledge into useful products.</p>
-          <p>I currently focus on biomarker discovery. Previously, I worked on continual pre-training agents at <a href="https://dai.win.tue.nl/team/5/" target="_blank" rel="noopener">Learning to Learn Lab</a>, and I completed my PhD in deep learning at the <a href="https://ivi.fnwi.uva.nl/quva/" target="_blank" rel="noopener">Qualcomm Labs</a> under <a href="https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&hl=en" target="_blank" rel="noopener">Arnold Smeulders</a>.</p>
-          <p>Beyond research, I enjoy creating visual <a href="images.html">memories</a> whenever I can.</p>
-          <div class="pill-row">
+    </header>
+    <main id="main" class="wrap" tabindex="-1">
+      <section id="bio" class="introduction" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <h1 id="intro-title">Mert Kilickaya</h1>
+          <p class="intro-lead">
+            I am an AI researcher. My goal is to help automate vision. Can we build
+            models that curate their own data, extract their own supervision,
+            and adapt on the fly to changes in the real world?
+          </p>
+          <p class="bio-education">
+            I completed my PhD in computer vision at the University of
+            Amsterdam’s
+            <a
+              href="https://ivi.fnwi.uva.nl/quva/"
+              target="_blank"
+              rel="noopener"
+              >Qualcomm Labs</a
+            >, supervised by
+            <a
+              href="https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&amp;hl=en"
+              target="_blank"
+              rel="noopener"
+              >Arnold Smeulders</a
+            >. Since then, I’ve been working in industry as a research engineer.
+          </p>
+          <p>
+            My work connects self-supervised visual representation learning,
+            continual adaptation, and vision-language learning — from academic
+            research to applied AI.
+          </p>
+          <p class="affiliation">
+            Currently a Senior Research Engineer at <strong>Greyparrot</strong>,
+            since October 2026.<br />Previously Agendia, TU Eindhoven, Qualcomm
+            Labs, and Huawei.
+          </p>
+          <p class="career-shortcut">
+            <a href="#experience"
+              >Experience <span aria-hidden="true">↓</span></a
+            >
+          </p>
+          <div class="text-links" aria-label="Contact and profiles">
             <a href="mailto:kilickayamert@gmail.com">Email</a>
             <a href="resume/resume.pdf" target="_blank" rel="noopener">CV</a>
-            <a href="https://scholar.google.com/citations?user=MBMjO0sAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/mert-kilickaya/" target="_blank" rel="noopener">LinkedIn</a>
+            <a
+              href="https://scholar.google.com/citations?user=MBMjO0sAAAAJ&hl=en&oi=ao"
+              target="_blank"
+              rel="noopener"
+              >Google Scholar</a
+            >
+            <a
+              href="https://www.linkedin.com/in/mert-kilickaya/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
           </div>
         </div>
-      </div>
-    </section>
+        <figure class="portrait">
+          <div class="portrait-photo">
+            <img
+              src="images/mert-selfie.jpeg"
+              alt="Mert Kilickaya"
+              width="2316"
+              height="3088"
+              fetchpriority="high"
+            />
+          </div>
+          <figcaption>PhD in computer vision</figcaption>
+        </figure>
+      </section>
+      <section
+        id="news"
+        class="section news-section"
+        aria-labelledby="news-title"
+      >
+        <div class="section-heading"><h2 id="news-title">News</h2></div>
+        <ul class="news-list">
+          <li>
+            <time datetime="2026-10">October 2026</time>
+            <p>
+              Our work at Agendia on
+              <a
+                href="https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/"
+                target="_blank"
+                rel="noopener"
+                >AI-driven digital pathology for the 70-gene recurrence
+                signature</a
+              >
+              was presented at ESMO 2026, the most prestigious conference in
+              Oncology.
+            </p>
+          </li>
+          <li>
+            <time datetime="2026-10">October 2026</time>
+            <p>I joined Greyparrot as a Senior Research Engineer.</p>
+          </li>
+        </ul>
+        <details id="earlier-news" class="news-archive">
+          <summary>Earlier news <span>2023–2024</span></summary>
+          <ul class="timeline">
+            <li>
+              <span class="news-date">10/2024</span>
+              <a href="resume/eccv_reviewer.pdf" target="_blank" rel="noopener"
+                >Honored to be an outstanding reviewer for ECCV'24!</a
+              >
+            </li>
+            <li>
+              <span class="news-date">07/2024</span>
+              <a
+                href="https://arxiv.org/pdf/2407.16269"
+                target="_blank"
+                rel="noopener"
+                >Our work on Transformer Architecture Search is accepted at
+                ECCV'24!</a
+              >
+            </li>
+            <li>
+              <span class="news-date">09/2023</span>
+              <a
+                href="https://arxiv.org/pdf/2309.01561.pdf"
+                target="_blank"
+                rel="noopener"
+                >Our work on Locality-aware Vision-Transformer is accepted at
+                BMVC'23!</a
+              >
+            </li>
+          </ul>
+        </details>
+      </section>
+      <section
+        id="experience"
+        class="section"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-heading">
+          <h2><span id="experience-title">Experience</span></h2>
+          <div class="text-links career-resources">
+            <a href="resume/resume.pdf" target="_blank" rel="noopener"
+              >View CV</a
+            ><a
+              href="https://www.linkedin.com/in/mert-kilickaya/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <ol
+          class="career-timeline"
+          aria-label="Career timeline, most recent first"
+        >
+          <li class="career-row">
+            <div>
+              <p class="career-date">October 2026 — present</p>
+              <h3>Greyparrot</h3>
+              <p>Senior Research Engineer · Industrial visual intelligence</p>
+            </div>
+            <span class="organization-mark" aria-hidden="true">
+              <img
+                src="images/organizations/greyparrot.svg"
+                alt=""
+                width="96"
+                height="96"
+              />
+            </span>
+          </li>
+          <li class="career-row">
+            <div>
+              <p class="career-date">2023 — October 2026</p>
+              <h3>Agendia <span>Amsterdam, Netherlands</span></h3>
+              <p>ML Researcher · Biomarker Discovery</p>
+            </div>
+            <span class="organization-mark" aria-hidden="true">
+              <img
+                src="images/organizations/agendia.svg"
+                alt=""
+                width="96"
+                height="96"
+              />
+            </span>
+          </li>
+          <li class="career-row">
+            <div>
+              <p class="career-date">2022 — 2023</p>
+              <h3>
+                Eindhoven University of Technology <span>Netherlands</span>
+              </h3>
+              <p>ML Researcher · Continual Pretraining Agents</p>
+              <p class="career-note">
+                <a
+                  href="https://dai.win.tue.nl/team/5/"
+                  target="_blank"
+                  rel="noopener"
+                  >Learning to Learn Lab</a
+                >
+              </p>
+            </div>
+            <span class="organization-mark" aria-hidden="true">
+              <img
+                src="images/organizations/tu-eindhoven.svg"
+                alt=""
+                width="96"
+                height="96"
+              />
+            </span>
+          </li>
+          <li class="career-row">
+            <div>
+              <p class="career-date">March 2021 — January 2022</p>
+              <h3>Huawei Visual Search Lab <span>Helsinki, Finland</span></h3>
+              <p>Research Intern · Multimodal Learning</p>
+            </div>
+            <span class="organization-mark" aria-hidden="true">
+              <img
+                src="images/organizations/huawei.svg"
+                alt=""
+                width="96"
+                height="96"
+              />
+            </span>
+          </li>
+          <li class="career-row">
+            <div>
+              <p class="career-date">2017 — 2022</p>
+              <h3>
+                Qualcomm Labs, University of Amsterdam <span>Netherlands</span>
+              </h3>
+              <p>PhD Researcher · Deep Learning for Vision</p>
+              <p class="career-note">
+                At
+                <a
+                  href="https://ivi.fnwi.uva.nl/quva/"
+                  target="_blank"
+                  rel="noopener"
+                  >Qualcomm Labs</a
+                >, supervised by
+                <a
+                  href="https://scholar.google.com/citations?user=aa5Ou7gAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Arnold Smeulders</a
+                >.
+              </p>
+            </div>
+            <span class="organization-mark" aria-hidden="true">
+              <img
+                src="images/organizations/quva.svg"
+                alt=""
+                width="96"
+                height="96"
+              />
+            </span>
+          </li>
+        </ol>
+      </section>
+      <section id="research" class="section" aria-labelledby="research-title">
+        <span id="publications" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-heading">
+          <h2><span id="research-title">Research</span></h2>
+          <p>
+            I want visual models to take a more active role in their own
+            learning: choosing useful data, learning from new observations, and
+            adapting efficiently as conditions change. This goal connects my
+            work in self-supervised, continual, and vision-language learning
+            with applications from medical diagnostics to industrial visual
+            intelligence.
+          </p>
+        </div>
+        <div class="research-papers">
+          <article id="publication-1" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/2407.16269"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/hytas.svg"
+                alt="Spectral images guide a search among candidate transformer architectures."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">ECCV 2024</p>
+              <h3>
+                HyTAS: A Hyperspectral Image Transformer Architecture Search
+                Benchmark and Analysis
+              </h3>
+              <p class="authors">
+                Fangqin Zhou, Mert Kilickaya, Joaquin Vanschoren, Ran Piao
+              </p>
+              <p class="description">
+                We present HyTAS, a quick method for hyperspectral vision
+                transformer architecture search.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/2407.16269"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a
+                  href="https://github.com/zhoufangqin/HyTAS/tree/main"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-2" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/2309.01561.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Locality-Aware Hyperspectral Classification"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/hylite.svg"
+                alt="Local image context and spectral information combine in HyLITE for classification."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">BMVC 2023</p>
+              <h3>Locality-Aware Hyperspectral Classification</h3>
+              <p class="authors">
+                Fangqin Zhou, Mert Kilickaya, Joaquin Vanschoren
+              </p>
+              <p class="description">
+                We propose HyLITE, a vision-transformer for hyperspectral image
+                classification.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/2309.01561.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a
+                  href="https://github.com/zhoufangqin/HyLITE"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-3" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/2302.00353.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Towards Label-Efficient Incremental Learning: A Survey"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/label-efficient-learning.svg"
+                alt="Semi-supervised, few-shot and self-supervised paths through incremental learning."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">Preprint 2023</p>
+              <h3>Towards Label-Efficient Incremental Learning: A Survey</h3>
+              <p class="authors">
+                Mert Kilickaya, Joost van de Weijer, Yuki Asano
+              </p>
+              <p class="description">
+                We survey semi-, few-shot, and self-supervised incremental
+                learning.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/2302.00353.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a href="resume/survey.pdf" target="_blank" rel="noopener"
+                  >Slides</a
+                >
+                <a
+                  href="https://github.com/kilickaya/label-efficient-il"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-4" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/2301.11417.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Are Labels Needed for Incremental Instance Learning?"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/vinil.svg"
+                alt="Two views of an instance support self-supervised learning that continues over time."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">
+                CVPRW 2023 (<a
+                  href="https://sites.google.com/view/clvision2023"
+                  target="_blank"
+                  rel="noopener"
+                  >Oral</a
+                >)
+              </p>
+              <h3>Are Labels Needed for Incremental Instance Learning?</h3>
+              <p class="authors">Mert Kilickaya, Joaquin Vanschoren</p>
+              <p class="description">
+                We introduce VINIL, a self-supervised incremental instance
+                learner.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/2301.11417.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a href="resume/slides_vinil.pdf" target="_blank" rel="noopener"
+                  >Slides</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-5" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/2112.00492.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Human-Object Interaction Detection via Weak Supervision"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/align-former.svg"
+                alt="Image-level interaction labels guide alignment and localization of a person and an object."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">BMVC 2021</p>
+              <h3>Human-Object Interaction Detection via Weak Supervision</h3>
+              <p class="authors">Mert Kilickaya, Arnold Smeulders</p>
+              <p class="description">
+                We introduce Align-Former to detect human-object interactions
+                from an image.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/2112.00492.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a
+                  href="resume/slides_bmvc21.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Slides</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-6" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://openaccess.thecvf.com/content/WACV2021/papers/Kilickaya_Structured_Visual_Search_via_Composition-Aware_Learning_WACV_2021_paper.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Structured Visual Search via Composition-aware Learning"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/composition-aware-search.svg"
+                alt="Changing a visual composition produces a corresponding change in its representation."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">WACV 2021</p>
+              <h3>Structured Visual Search via Composition-aware Learning</h3>
+              <p class="authors">Mert Kilickaya, Arnold Smeulders</p>
+              <p class="description">
+                We introduce composition-aware learning to improve visual image
+                search.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://openaccess.thecvf.com/content/WACV2021/papers/Kilickaya_Structured_Visual_Search_via_Composition-Aware_Learning_WACV_2021_paper.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a
+                  href="resume/slides_wacv21.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Slides</a
+                >
+              </div>
+            </div>
+          </article>
+          <article id="publication-7" class="research-paper">
+            <a
+              class="figure-link"
+              href="https://arxiv.org/pdf/1612.07600.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read paper: Re-evaluating Automatic Metrics for Image Captioning"
+              ><img
+                class="research-image"
+                loading="lazy"
+                src="images/research/caption-evaluation.svg"
+                alt="Reference and candidate captions are compared through their meaning."
+                width="800"
+                height="500"
+            /></a>
+            <div class="paper-copy">
+              <p class="venue">EACL 2017</p>
+              <h3>Re-evaluating Automatic Metrics for Image Captioning</h3>
+              <p class="authors">
+                Mert Kilickaya, Aykut Erdem, Nazli Ikizler-Cinbis, Erkut Erdem
+              </p>
+              <p class="description">
+                We propose Word-Mover Distance to evaluate image captioning.
+              </p>
+              <div class="text-links">
+                <a
+                  href="https://arxiv.org/pdf/1612.07600.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >arXiv</a
+                >
+                <a
+                  href="resume/slides_eacl17.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Slides</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-    <section id="news" class="card">
-      <h2 class="section-title">News</h2>
-      <ul class="timeline">
-        <li>
-          <span class="badge">10/2024</span>
-          <a href="resume/eccv_reviewer.pdf" target="_blank" rel="noopener">Honored to be an outstanding reviewer for ECCV'24!</a>
-        </li>
-        <li>
-          <span class="badge">07/2024</span>
-          <a href="https://arxiv.org/pdf/2407.16269" target="_blank" rel="noopener">Our work on Transformer Architecture Search is accepted at ECCV'24!</a>
-        </li>
-        <li>
-          <span class="badge">09/2023</span>
-          <a href="https://arxiv.org/pdf/2309.01561.pdf" target="_blank" rel="noopener">Our work on Locality-aware Vision-Transformer is accepted at BMVC'23!</a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="experience" class="card">
-      <h2 class="section-title">Experience</h2>
-      <div class="item">
-        <img class="media" src="images/Agendia.png" alt="Agendia" />
-        <div>
-          <p class="title">Agendia, Amsterdam, Netherlands</p>
-          <p class="meta">2023-Now</p>
-          <p class="sub">ML Researcher (Biomarker Discovery)</p>
+      <section id="patents" class="section" aria-labelledby="patents-title">
+        <div class="section-heading">
+          <h2><span id="patents-title">Patents</span></h2>
         </div>
-      </div>
-      <div class="item">
-        <img class="media" src="images/TUE.png" alt="TU Eindhoven" />
-        <div>
-          <p class="title">Learning to Learn Lab, Eindhoven University of Technology, Netherlands</p>
-          <p class="meta">2022-2023</p>
-          <p class="sub">ML Researcher (Continual Pretraining Agents)</p>
+        <article class="patent">
+          <h3>Visual Image Search via Conversational Interaction (Huawei)</h3>
+          <p class="authors">Mert Kilickaya, Baiqiang XIA</p>
+          <p>
+            <a
+              href="https://patents.google.com/patent/WO2023117041A1/"
+              target="_blank"
+              rel="noopener"
+              >WO Patent, 2022</a
+            >
+          </p>
+        </article>
+        <article class="patent">
+          <h3>Network for Interacted Object Localization (Qualcomm)</h3>
+          <p class="authors">Mert Kilickaya, Arnold Smeulders</p>
+          <p>
+            <a
+              href="https://patents.google.com/patent/US20220414371A1/"
+              target="_blank"
+              rel="noopener"
+              >US Patent, 2022</a
+            >
+          </p>
+        </article>
+        <article class="patent">
+          <h3>Subject-Object Interaction Recognition Model (Qualcomm)</h3>
+          <p class="authors">
+            Mert Kilickaya, Stratis Gavves, Arnold Smeulders
+          </p>
+          <p>
+            <a
+              href="https://patents.google.com/patent/US11481576B2/"
+              target="_blank"
+              rel="noopener"
+              >US Patent, 2022</a
+            >
+          </p>
+        </article>
+        <article class="patent">
+          <h3>
+            Context-driven Learning of Human-object Interactions (Qualcomm)
+          </h3>
+          <p class="authors">
+            Mert Kilickaya, Noureldien Hussein, Stratis Gavves, Arnold Smeulders
+          </p>
+          <p>
+            <a
+              href="https://patents.google.com/patent/EP4058930A1/"
+              target="_blank"
+              rel="noopener"
+              >US Patent, 2021</a
+            >
+          </p>
+        </article>
+      </section>
+      <section id="supervision" class="section" aria-labelledby="people-title">
+        <div class="section-heading">
+          <h2><span id="people-title">People & Mentorship</span></h2>
+          <p>
+            Research is a shared endeavour. I’m fortunate to have worked with
+            and supervised these thoughtful people.
+          </p>
         </div>
-      </div>
-      <div class="item">
-        <img class="media" src="images/QUVA.png" alt="Qualcomm Lab" />
-        <div>
-          <p class="title">Qualcomm Labs, University of Amsterdam, Netherlands</p>
-          <p class="meta">2017-2022</p>
-          <p class="sub">PhD Researcher (Deep Learning for Vision)</p>
-        </div>
-      </div>
-      <div class="item">
-        <img class="media" src="images/Huawei.jpg" alt="Huawei Visual Search Lab" />
-        <div>
-          <p class="title">Huawei Visual Search Lab, Helsinki, Finland</p>
-          <p class="meta">2021 March - 2022 January</p>
-          <p class="sub">Research Intern (Multimodal Learning)</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="research" class="card">
-      <h2 class="section-title">Research</h2>
-      <p class="section-note">A selected list of papers and projects.</p>
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/hytas.png" alt="HyTAS" />
+        <div class="people-list">
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/evangelos.jpg"
+              alt="Evangelos Tsimpouris"
+            />
             <div>
-              <p class="title">HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis</p>
-              <p class="sub">Fangqin Zhou, Mert Kilickaya, Joaquin Vanschoren, Ran Piao</p>
-              <p class="meta">ECCV 2024</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/2407.16269" target="_blank" rel="noopener">arXiv</a>
-                <a href="https://github.com/zhoufangqin/HyTAS/tree/main" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <p>We present HyTAS, a quick method for hyperspectral vision transformer architecture search.</p>
+              <h3>
+                <a
+                  href="https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl"
+                  target="_blank"
+                  rel="noopener"
+                  >Evangelos Tsimpouris</a
+                >
+                (MSc, TU/e)
+              </h3>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl"
+                  target="_blank"
+                  rel="noopener"
+                  >Learning to Transfer for Continual Learning</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/hylite.PNG" alt="HyLITE" />
+            <span class="person-date">2023-2024</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/fangqin.jpg"
+              alt="Fangqin Zhou"
+            />
             <div>
-              <p class="title">Locality-Aware Hyperspectral Classification</p>
-              <p class="sub">Fangqin Zhou, Mert Kilickaya, Joaquin Vanschoren</p>
-              <p class="meta">BMVC 2023</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/2309.01561.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="https://github.com/zhoufangqin/HyLITE" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <p>We propose HyLITE, a vision-transformer for hyperspectral image classification.</p>
+              <h3>
+                <a
+                  href="https://research.tue.nl/en/persons/fangqin-zhou"
+                  target="_blank"
+                  rel="noopener"
+                  >Fangqin Zhou</a
+                >
+                (PhD, TU/e)
+              </h3>
+              <p>
+                <a
+                  href="https://arxiv.org/abs/2309.01561v1"
+                  target="_blank"
+                  rel="noopener"
+                  >Locality-Aware Vision Transformers</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/survey_cil.PNG" alt="Survey CIL" />
+            <span class="person-date">2022-2024</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/ran.jpg"
+              alt="Ran Piao"
+            />
             <div>
-              <p class="title">Towards Label-Efficient Incremental Learning: A Survey</p>
-              <p class="sub">Mert Kilickaya, Joost van de Weijer, Yuki Asano</p>
-              <p class="meta">Preprint 2023</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/2302.00353.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="resume/survey.pdf" target="_blank" rel="noopener">Slides</a>
-                <a href="https://github.com/kilickaya/label-efficient-il" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <p>We survey semi-, few-shot, and self-supervised incremental learning.</p>
+              <h3>
+                <a
+                  href="https://www.linkedin.com/in/ran-piao-a0a1a6281/?originalSubdomain=nl"
+                  target="_blank"
+                  rel="noopener"
+                  >Ran Piao</a
+                >
+                (MSc, TU/e)
+              </h3>
+              <p>
+                <a
+                  href="https://drive.google.com/file/d/10ntRevPI_mF00oRE9_LhQrNr09hnHNuC/view"
+                  target="_blank"
+                  rel="noopener"
+                  >Rapid Transformer Architecture Search without Training</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/VINIL.PNG" alt="VINIL" />
+            <span class="person-date">2022-2023</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/tommie.jpg"
+              alt="Tommie Kerssies"
+            />
             <div>
-              <p class="title">Are Labels Needed for Incremental Instance Learning?</p>
-              <p class="sub">Mert Kilickaya, Joaquin Vanschoren</p>
-              <p class="meta">CVPRW 2023 (<a href="https://sites.google.com/view/clvision2023" target="_blank" rel="noopener">Oral</a>)</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/2301.11417.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="resume/slides_vinil.pdf" target="_blank" rel="noopener">Slides</a>
-              </div>
-              <p>We introduce VINIL, a self-supervised incremental instance learner.</p>
+              <h3>
+                <a
+                  href="https://scholar.google.com/citations?user=rrJn-eEAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Tommie Kerssies</a
+                >
+                (MSc, TU/e)
+              </h3>
+              <p>
+                <a
+                  href="https://arxiv.org/pdf/2208.08767.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Test Time Adaptation</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/BMVC21.png" alt="BMVC21" />
+            <span class="person-date">2022-2023</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/ceren.jpg"
+              alt="Ceren Gok-Yildirim"
+            />
             <div>
-              <p class="title">Human-Object Interaction Detection via Weak Supervision</p>
-              <p class="sub">Mert Kilickaya, Arnold Smeulders</p>
-              <p class="meta">BMVC 2021</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/2112.00492.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="resume/slides_bmvc21.pdf" target="_blank" rel="noopener">Slides</a>
-              </div>
-              <p>We introduce Align-Former to detect human-object interactions from an image.</p>
+              <h3>
+                <a
+                  href="https://research.tue.nl/en/persons/ceren-g%C3%B6k"
+                  target="_blank"
+                  rel="noopener"
+                  >Ceren Gok-Yildirim</a
+                >
+                (PhD, TU/e)
+              </h3>
+              <p>
+                <a
+                  href="https://arxiv.org/pdf/2303.13113.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Learning to Adapt for Continual Learning</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/WACV21.png" alt="WACV21" />
+            <span class="person-date">2022-2023</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/kishan.jpg"
+              alt="Kishan Parshotam"
+            />
             <div>
-              <p class="title">Structured Visual Search via Composition-aware Learning</p>
-              <p class="sub">Mert Kilickaya, Arnold Smeulders</p>
-              <p class="meta">WACV 2021</p>
-              <div class="links-row">
-                <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Kilickaya_Structured_Visual_Search_via_Composition-Aware_Learning_WACV_2021_paper.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="resume/slides_wacv21.pdf" target="_blank" rel="noopener">Slides</a>
-              </div>
-              <p>We introduce composition-aware learning to improve visual image search.</p>
+              <h3>
+                <a
+                  href="https://scholar.google.com/citations?user=75hA5MQAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Kishan Parshotam</a
+                >
+                (MSc, UvA)
+              </h3>
+              <p>
+                <a
+                  href="https://openaccess.thecvf.com/content_CVPRW_2020/papers/w15/Parshotam_Continual_Learning_of_Object_Instances_CVPRW_2020_paper.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Continual Learning of Object Instances</a
+                >
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media" src="images/EACL17.png" alt="EACL17" />
+            <span class="person-date">2020-2021</span>
+          </article>
+          <article class="person">
+            <img
+              class="person-image"
+              loading="lazy"
+              width="48"
+              height="48"
+              src="images/tarun.jpg"
+              alt="Tarun Krishna"
+            />
             <div>
-              <p class="title">Re-evaluating Automatic Metrics for Image Captioning</p>
-              <p class="sub">Mert Kilickaya, Aykut Erdem, Nazli Ikizler-Cinbis, Erkut Erdem</p>
-              <p class="meta">EACL 2017</p>
-              <div class="links-row">
-                <a href="https://arxiv.org/pdf/1612.07600.pdf" target="_blank" rel="noopener">arXiv</a>
-                <a href="resume/slides_eacl17.pdf" target="_blank" rel="noopener">Slides</a>
-              </div>
-              <p>We propose Word-Mover Distance to evaluate image captioning.</p>
+              <h3>
+                <a
+                  href="https://krishnatarun.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >Tarun Krishna</a
+                >
+                (MSc, UvA)
+              </h3>
+              <p>
+                <a
+                  href="https://drive.google.com/file/d/1klDGsZJFHzIJ1v2yQc-pCVPJESA-Rl8p/view"
+                  target="_blank"
+                  rel="noopener"
+                  >Learning to rotate, scale and shift visual objects via
+                  disentanglement</a
+                >
+              </p>
             </div>
-          </div>
+            <span class="person-date">2019-2020</span>
+          </article>
         </div>
-      </div>
-    </section>
-
-    <section id="patents" class="card">
-      <h2 class="section-title">Patents</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <p class="title">Visual Image Search via Conversational Interaction (Huawei)</p>
-          <p class="sub">Mert Kilickaya, Baiqiang XIA</p>
-          <p><a href="https://patents.google.com/patent/WO2023117041A1/" target="_blank" rel="noopener">WO Patent, 2022</a></p>
+      </section>
+      <section
+        id="memories"
+        class="section memories-preview"
+        aria-labelledby="memories-title"
+      >
+        <div class="section-heading">
+          <h2><span id="memories-title">Beyond Research</span></h2>
+          <p>
+            Away from research, I make visual memories. A few places, small
+            observations, and moments worth keeping.
+          </p>
         </div>
-        <div class="card">
-          <p class="title">Network for Interacted Object Localization (Qualcomm)</p>
-          <p class="sub">Mert Kilickaya, Arnold Smeulders</p>
-          <p><a href="https://patents.google.com/patent/US20220414371A1/" target="_blank" rel="noopener">US Patent, 2022</a></p>
+        <div class="journal-preview">
+          <figure>
+            <a href="images.html"
+              ><img
+                src="images/ams1.jpg"
+                alt="Amsterdam, Netherlands"
+                width="1334"
+                height="1000"
+                loading="lazy"
+            /></a>
+            <figcaption>Amsterdam, Netherlands · 2021</figcaption>
+          </figure>
+          <figure>
+            <a href="images.html"
+              ><img
+                src="images/rome.jpg"
+                alt="Rome, Italy"
+                width="846"
+                height="1057"
+                loading="lazy"
+            /></a>
+            <figcaption>Rome, Italy · 2022</figcaption>
+          </figure>
         </div>
-        <div class="card">
-          <p class="title">Subject-Object Interaction Recognition Model (Qualcomm)</p>
-          <p class="sub">Mert Kilickaya, Stratis Gavves, Arnold Smeulders</p>
-          <p><a href="https://patents.google.com/patent/US11481576B2/" target="_blank" rel="noopener">US Patent, 2022</a></p>
-        </div>
-        <div class="card">
-          <p class="title">Context-driven Learning of Human-object Interactions (Qualcomm)</p>
-          <p class="sub">Mert Kilickaya, Noureldien Hussein, Stratis Gavves, Arnold Smeulders</p>
-          <p><a href="https://patents.google.com/patent/EP4058930A1/" target="_blank" rel="noopener">US Patent, 2021</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="supervision" class="card">
-      <h2 class="section-title">Supervision</h2>
-      <p class="muted">I am very fortunate to have crossed paths with these talented individuals.</p>
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/evangelos.jpg" alt="Evangelos Tsimpouris" />
-            <div>
-              <p class="title"><a href="https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl" target="_blank" rel="noopener">Evangelos Tsimpouris</a> (MSc, TU/e)</p>
-              <p class="meta">2023-2024</p>
-              <p><a href="https://www.linkedin.com/in/evangelos-tsimpouris-141a75190/?originalSubdomain=nl" target="_blank" rel="noopener">Learning to Transfer for Continual Learning</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/fangqin.jpg" alt="Fangqin Zhou" />
-            <div>
-              <p class="title"><a href="https://research.tue.nl/en/persons/fangqin-zhou" target="_blank" rel="noopener">Fangqin Zhou</a> (PhD, TU/e)</p>
-              <p class="meta">2022-2024</p>
-              <p><a href="https://arxiv.org/abs/2309.01561v1" target="_blank" rel="noopener">Locality-Aware Vision Transformers</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/ran.jpg" alt="Ran Piao" />
-            <div>
-              <p class="title"><a href="https://www.linkedin.com/in/ran-piao-a0a1a6281/?originalSubdomain=nl" target="_blank" rel="noopener">Ran Piao</a> (MSc, TU/e)</p>
-              <p class="meta">2022-2023</p>
-              <p><a href="https://drive.google.com/file/d/10ntRevPI_mF00oRE9_LhQrNr09hnHNuC/view" target="_blank" rel="noopener">Rapid Transformer Architecture Search without Training</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/tommie.jpg" alt="Tommie Kerssies" />
-            <div>
-              <p class="title"><a href="https://scholar.google.com/citations?user=rrJn-eEAAAAJ&hl=en" target="_blank" rel="noopener">Tommie Kerssies</a> (MSc, TU/e)</p>
-              <p class="meta">2022-2023</p>
-              <p><a href="https://arxiv.org/pdf/2208.08767.pdf" target="_blank" rel="noopener">Test Time Adaptation</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/ceren.jpg" alt="Ceren Gok-Yildirim" />
-            <div>
-              <p class="title"><a href="https://research.tue.nl/en/persons/ceren-g%C3%B6k" target="_blank" rel="noopener">Ceren Gok-Yildirim</a> (PhD, TU/e)</p>
-              <p class="meta">2022-2023</p>
-              <p><a href="https://arxiv.org/pdf/2303.13113.pdf" target="_blank" rel="noopener">Learning to Adapt for Continual Learning</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/kishan.jpg" alt="Kishan Parshotam" />
-            <div>
-              <p class="title"><a href="https://scholar.google.com/citations?user=75hA5MQAAAAJ&hl=en" target="_blank" rel="noopener">Kishan Parshotam</a> (MSc, UvA)</p>
-              <p class="meta">2020-2021</p>
-              <p><a href="https://openaccess.thecvf.com/content_CVPRW_2020/papers/w15/Parshotam_Continual_Learning_of_Object_Instances_CVPRW_2020_paper.pdf" target="_blank" rel="noopener">Continual Learning of Object Instances</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="item">
-            <img class="media round" src="images/tarun.jpg" alt="Tarun Krishna" />
-            <div>
-              <p class="title"><a href="https://krishnatarun.github.io/" target="_blank" rel="noopener">Tarun Krishna</a> (MSc, UvA)</p>
-              <p class="meta">2019-2020</p>
-              <p><a href="https://drive.google.com/file/d/1klDGsZJFHzIJ1v2yQc-pCVPJESA-Rl8p/view" target="_blank" rel="noopener">Learning to rotate, scale and shift visual objects via disentanglement</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot">
+        <a class="section-link" href="images.html"
+          >Explore my visual journal <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer class="site-footer wrap">
       <span>© Mert Kilickaya</span>
-      <span><a href="#bio">Top</a></span>
-    </div>
-  </footer>
-
-  <script>
-    const links = document.querySelectorAll('#topnav a[href^="#"]');
-    const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
-    const nav = () => {
-      const y = window.scrollY + 120;
-      sections.forEach((sec, i) => {
-        const a = links[i];
-        if (!sec) return;
-        const top = sec.offsetTop, bottom = top + sec.offsetHeight;
-        a.classList.toggle('active', y >= top && y < bottom);
-      });
-    };
-    document.addEventListener('scroll', nav, { passive: true });
-    nav();
-
-    const root = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-    const key = 'pref-theme';
-    const setTheme = t => document.documentElement.setAttribute('data-theme', t);
-    const saved = localStorage.getItem(key);
-    if (saved) setTheme(saved);
-
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      const next = current === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-      localStorage.setItem(key, next);
-    });
-  </script>
-</body>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark theme"
+        aria-pressed="false"
+        hidden
+      >
+        Dark
+      </button>
+      <div class="profile-exports">
+        <a href="profile.md">Research profile</a>
+        <a href="publications.bib" download>BibTeX</a>
+      </div>
+      <div>
+        <a href="mailto:kilickayamert@gmail.com">Get in touch</a
+        ><a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
 </html>

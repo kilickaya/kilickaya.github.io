@@ -1,352 +1,374 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Memories</title>
-    <style>
-      :root {
-        --bg: #ffffff;
-        --fg: #0f172a;
-        --muted: #475569;
-        --card: #ffffff;
-        --border: #e5e7eb;
-        --accent: #0ea5e9;
-        --ring: #38bdf8;
-        --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(0,0,0,.05);
-        --radius: 12px;
-        --container: 1040px;
-        --gallery-container: 1480px;
-        --step--1: clamp(.88rem,.86rem + .1vw, .95rem);
-        --step-0: clamp(1rem,.98rem + .15vw,1.075rem);
-        --step-1: clamp(1.25rem,1.18rem + .4vw,1.45rem);
-        --step-2: clamp(1.5rem,1.42rem + .6vw,1.8rem);
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0b1220;
-          --fg: #e5e7eb;
-          --muted: #94a3b8;
-          --card: #0f172a;
-          --border: #1f2937;
-          --accent: #38bdf8;
-          --ring: #38bdf8;
-          --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
-        }
-      }
-      [data-theme="dark"] {
-        --bg: #0b1220;
-        --fg: #e5e7eb;
-        --muted: #94a3b8;
-        --card: #0f172a;
-        --border: #1f2937;
-        --accent: #38bdf8;
-        --ring: #38bdf8;
-        --shadow: 0 1px 2px rgba(0,0,0,.28), 0 6px 18px rgba(0,0,0,.24);
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.68;
-        font-size: var(--step-0);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      a { color: var(--accent); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      a:focus, button:focus { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
-      .container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: 20px; }
-      .gallery-container { width: min(100%, var(--gallery-container)); margin-inline: auto; padding-inline: 20px; }
-      header {
-        position: sticky; top: 0; z-index: 50;
-        backdrop-filter: saturate(180%) blur(8px);
-        background: color-mix(in hsl, var(--bg) 92%, transparent);
-        border-bottom: 1px solid var(--border);
-      }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between; gap: 16px;
-        padding: 10px 0;
-      }
-      .brand {
-        display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .2px;
-      }
-      .avatar {
-        width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);
-      }
-      .links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-      .links a {
-        padding: 6px 10px; border-radius: 999px; border: 1px solid transparent;
-        color: var(--muted); font-size: var(--step--1);
-      }
-      .links a:hover, .links a.active {
-        background: color-mix(in hsl, var(--accent) 10%, transparent);
-        color: var(--fg);
-        text-decoration: none;
-      }
-      .toggle {
-        border: 1px solid var(--border); background: var(--card); color: var(--fg);
-        border-radius: 999px; padding: 6px 10px; cursor: pointer;
-      }
-      main { padding: 22px 0 40px; }
-      .intro {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 22px;
-        margin-bottom: 22px;
-      }
-      h1 {
-        font-size: var(--step-2);
-        margin: 0 0 10px 0;
-      }
-      .intro p {
-        color: var(--muted);
-        margin: 0;
-        max-width: 70ch;
-      }
-      .year-section {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 20px;
-      }
-      .year-section + .year-section { margin-top: 18px; }
-      .year-head {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-      .year-head h2 {
-        font-size: var(--step-1);
-        margin: 0;
-      }
-      .year-head span {
-        color: var(--muted);
-        font-size: var(--step--1);
-      }
-      .gallery {
-        display: grid;
-        gap: 14px;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-      figure {
-        margin: 0;
-      }
-      figure img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: color-mix(in hsl, var(--bg) 92%, var(--card));
-      }
-      figcaption {
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: var(--step--1);
-        line-height: 1.45;
-      }
-      @media (max-width: 900px) {
-        .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      }
-      @media (max-width: 640px) {
-        .nav { align-items: flex-start; }
-        .links {
-          gap: 8px;
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          padding-bottom: 4px;
-          width: 100%;
-        }
-        .links a, .toggle { white-space: nowrap; }
-        .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .year-head { flex-direction: column; align-items: flex-start; }
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .year-section, figure img, .links a, .toggle { transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
-        .year-section:hover { transform: translateY(-2px); }
-      }
-    </style>
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="A small photography journal by Mert Kilickaya. Visual memories from Portugal, Italy, Amsterdam, and Tenerife."
+    />
+    <title>Memories — Mert Kilickaya</title>
+    <link rel="icon" href="images/mert-selfie.jpeg" type="image/jpeg" />
+    <link
+      rel="preload"
+      href="assets/fonts/editorial/dm-sans.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/editorial/newsreader.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/editorial.css" />
+    <script src="assets/js/editorial.js" defer></script>
+    <!-- Generated research metadata: scripts/build-profile.py -->
+    <link rel="canonical" href="https://kilickaya.github.io/images.html" />
+    <link rel="alternate" type="text/markdown" href="https://kilickaya.github.io/profile.md" title="Research profile in Markdown" />
+    <link rel="alternate" type="application/json" href="https://kilickaya.github.io/profile.json" title="Structured research profile" />
+    <link rel="alternate" type="application/x-bibtex" href="https://kilickaya.github.io/publications.bib" title="Publication citations" />
+    <link rel="sitemap" type="application/xml" href="https://kilickaya.github.io/sitemap.xml" />
+    <meta name="author" content="Mert Kilickaya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Memories — Mert Kilickaya" />
+    <meta property="og:description" content="A small photography journal by Mert Kilickaya. Visual memories from Portugal, Italy, Amsterdam, and Tenerife." />
+    <meta property="og:url" content="https://kilickaya.github.io/images.html" />
+    <meta property="og:image" content="https://kilickaya.github.io/images/mert-selfie.jpeg" />
+    <meta property="og:image:alt" content="Mert Kilickaya" />
+    <meta name="twitter:card" content="summary" />
+    <!-- End generated research metadata -->
   </head>
-  <body>
-    <header>
-      <div class="container nav">
-        <div class="brand">
-          <img class="avatar" src="images/avatar3.JPG" alt="Mert Kilickaya" />
-          <span>Mert Kilickaya</span>
-        </div>
-        <nav class="links">
-          <a href="index.html">Home</a>
-          <a href="images.html" class="active">Memories</a>
-          <button class="toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
-        </nav>
-      </div>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="index.html"
+        >Mert Kilickaya<span>Autonomous vision researcher</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html#news">News</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#patents">Patents</a>
+        <a href="index.html#supervision">People</a>
+        <a href="images.html" aria-current="page">Memories</a>
+      </nav>
     </header>
-
-    <main>
-      <section class="intro container">
+    <main id="main" class="wrap photography" tabindex="-1">
+      <section class="journal-intro">
+        <p class="eyebrow">Away from the screen</p>
         <h1>Memories</h1>
-        <p>A small collection of visual memories from places I have been.</p>
+        <p>
+          A small collection of visual memories from places I have been.<br />Looking
+          closely, away from the screen.
+        </p>
+        <a class="section-link" href="index.html">← Back to research</a>
       </section>
-
-      <section class="year-section gallery-container">
+      <section aria-label="2023 memories" class="year-section">
         <div class="year-head">
           <h2>2023</h2>
           <span>Portugal</span>
         </div>
         <div class="gallery">
           <figure>
-            <img src="images/albufeira.jpg" alt="Albufeira, Portugal" loading="lazy">
+            <img
+              src="images/albufeira.jpg"
+              alt="Albufeira, Portugal"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Albufeira, Portugal</figcaption>
           </figure>
           <figure>
-            <img src="images/olhao.png" alt="Olhao, Portugal" loading="lazy">
+            <img
+              src="images/olhao.png"
+              alt="Olhao, Portugal"
+              loading="lazy"
+              width="598"
+              height="673"
+            />
             <figcaption>Olhao, Portugal</figcaption>
           </figure>
           <figure>
-            <img src="images/faro.jpg" alt="Faro, Portugal" loading="lazy">
+            <img
+              src="images/faro.jpg"
+              alt="Faro, Portugal"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Faro, Portugal</figcaption>
           </figure>
           <figure>
-            <img src="images/desert_island.jpg" alt="Desert Island, Portugal" loading="lazy">
+            <img
+              src="images/desert_island.jpg"
+              alt="Desert Island, Portugal"
+              loading="lazy"
+              width="800"
+              height="1000"
+            />
             <figcaption>Desert Island, Portugal</figcaption>
           </figure>
           <figure>
-            <img src="images/desert_island2.jpg" alt="Desert Island, Portugal" loading="lazy">
+            <img
+              src="images/desert_island2.jpg"
+              alt="Desert Island, Portugal"
+              loading="lazy"
+              width="800"
+              height="1000"
+            />
             <figcaption>Desert Island, Portugal</figcaption>
           </figure>
         </div>
       </section>
-
-      <section class="year-section gallery-container">
+      <section aria-label="2022 memories" class="year-section">
         <div class="year-head">
           <h2>2022</h2>
           <span>Italy</span>
         </div>
         <div class="gallery">
           <figure>
-            <img src="images/rome.jpg" alt="Rome, Italy" loading="lazy">
+            <img
+              src="images/rome.jpg"
+              alt="Rome, Italy"
+              loading="lazy"
+              width="846"
+              height="1057"
+            />
             <figcaption>Rome, Italy</figcaption>
           </figure>
           <figure>
-            <img src="images/rome2.jpg" alt="Rome, Italy" loading="lazy">
+            <img
+              src="images/rome2.jpg"
+              alt="Rome, Italy"
+              loading="lazy"
+              width="800"
+              height="1000"
+            />
             <figcaption>Rome, Italy</figcaption>
           </figure>
           <figure>
-            <img src="images/rome3.jpg" alt="Rome, Italy" loading="lazy">
+            <img
+              src="images/rome3.jpg"
+              alt="Rome, Italy"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Rome, Italy</figcaption>
           </figure>
           <figure>
-            <img src="images/napoli.jpg" alt="Napoli, Italy" loading="lazy">
+            <img
+              src="images/napoli.jpg"
+              alt="Napoli, Italy"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Napoli, Italy</figcaption>
           </figure>
           <figure>
-            <img src="images/amalfi.jpg" alt="Sorrento, Italy" loading="lazy">
+            <img
+              src="images/amalfi.jpg"
+              alt="Sorrento, Italy"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Sorrento, Italy</figcaption>
           </figure>
         </div>
       </section>
-
-      <section class="year-section gallery-container">
+      <section aria-label="2021 memories" class="year-section">
         <div class="year-head">
           <h2>2021</h2>
           <span>Amsterdam, Netherlands</span>
         </div>
         <div class="gallery">
           <figure>
-            <img src="images/ams1.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams1.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams2.JPG" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams2.JPG"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1500"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams3.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams3.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams4.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams4.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1333"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams5.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams5.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams6.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams6.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams7.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams7.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams8.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams8.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams9.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams9.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
           <figure>
-            <img src="images/ams10.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+            <img
+              src="images/ams10.jpg"
+              alt="Amsterdam, Netherlands"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Amsterdam, Netherlands</figcaption>
           </figure>
         </div>
       </section>
-
-      <section class="year-section gallery-container">
+      <section aria-label="2019 memories" class="year-section">
         <div class="year-head">
           <h2>2019</h2>
           <span>Tenerife, Spain</span>
         </div>
         <div class="gallery">
           <figure>
-            <img src="images/tenerife1.JPG" alt="Tenerife, Spain" loading="lazy">
+            <img
+              src="images/tenerife1.JPG"
+              alt="Tenerife, Spain"
+              loading="lazy"
+              width="1409"
+              height="1057"
+            />
             <figcaption>Tenerife, Spain</figcaption>
           </figure>
           <figure>
-            <img src="images/tenerife2.JPG" alt="Tenerife, Spain" loading="lazy">
+            <img
+              src="images/tenerife2.JPG"
+              alt="Tenerife, Spain"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Tenerife, Spain</figcaption>
           </figure>
           <figure>
-            <img src="images/tenerife5.JPG" alt="Tenerife, Spain" loading="lazy">
+            <img
+              src="images/tenerife5.JPG"
+              alt="Tenerife, Spain"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Tenerife, Spain</figcaption>
           </figure>
           <figure>
-            <img src="images/tenerife6.JPG" alt="Tenerife, Spain" loading="lazy">
+            <img
+              src="images/tenerife6.JPG"
+              alt="Tenerife, Spain"
+              loading="lazy"
+              width="750"
+              height="1000"
+            />
             <figcaption>Tenerife, Spain</figcaption>
           </figure>
           <figure>
-            <img src="images/tenerife7.JPG" alt="Tenerife, Spain" loading="lazy">
+            <img
+              src="images/tenerife7.JPG"
+              alt="Tenerife, Spain"
+              loading="lazy"
+              width="1334"
+              height="1000"
+            />
             <figcaption>Tenerife, Spain</figcaption>
           </figure>
         </div>
       </section>
     </main>
-
-    <script>
-      const root = document.documentElement;
-      const toggle = document.getElementById('themeToggle');
-      const key = 'pref-theme';
-      const setTheme = t => document.documentElement.setAttribute('data-theme', t);
-      const saved = localStorage.getItem(key);
-      if (saved) setTheme(saved);
-
-      toggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        const next = current === 'dark' ? 'light' : 'dark';
-        setTheme(next);
-        localStorage.setItem(key, next);
-      });
-    </script>
+    <footer class="site-footer wrap">
+      <span>© Mert Kilickaya</span>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark theme"
+        aria-pressed="false"
+        hidden
+      >
+        Dark
+      </button>
+      <div class="profile-exports">
+        <a href="profile.md">Research profile</a>
+        <a href="publications.bib" download>BibTeX</a>
+      </div>
+      <div>
+        <a href="mailto:kilickayamert@gmail.com">Get in touch</a
+        ><a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
   </body>
 </html>
