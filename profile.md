@@ -1,6 +1,6 @@
 # Mert Kilickaya
 
-> Autonomous vision researcher. Senior Research Engineer at Greyparrot.
+> Senior AI Research Engineer. Senior Research Engineer at Greyparrot.
 
 I am an AI researcher. My goal is to help automate vision. Can we build models that curate their own data, extract their own supervision, and adapt on the fly to changes in the real world?
 
@@ -93,6 +93,20 @@ Location: Netherlands
   - [Our work on Locality-aware Vision-Transformer is accepted at BMVC'23!](https://arxiv.org/pdf/2309.01561.pdf)
 
 ## Research
+
+### AI Driven Digital Pathology for the 70 Gene Recurrence Signature: Development and Validation in Early Stage Breast Cancer
+
+Agendia · Presented by Laura van ’t Veer
+
+ESMO 2026 · LBA20 (Oral)
+
+Our work at Agendia explores predicting recurrence risk directly from routine whole-slide images of breast cancer tissue, using supervision from the 70-gene signature.
+
+- [Abstract](https://agendia.com/ai-driven-digital-pathology-for-the-70-gene-recurrence-signature-development-and-validation-in-early-stage-breast-cancer/)
+
+- [Announcement](https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/)
+
+- [Publication on the website](https://kilickaya.github.io/#publication-esmo-2026)
 
 ### HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis
 
@@ -248,7 +262,7 @@ Mert Kilickaya, Noureldien Hussein, Stratis Gavves, Arnold Smeulders
 
 - The CV is an existing PDF and may lag the career information on the homepage.
 
-- The ESMO 2026 item is news linked to Agendia’s announcement; a full author list and journal record are not supplied.
+- The ESMO 2026 abstract is linked to Agendia’s publication page. Its presenter is credited separately; the full author list and journal/DOI record are not supplied.
 
 - The publication archive is the archive on this website, not a claim to include every subsequent work.
 

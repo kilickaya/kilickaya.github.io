@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw the site's seven conceptual publication illustrations. No dependencies."""
+"""Draw the site's eight conceptual publication illustrations. No dependencies."""
 from pathlib import Path
 from html import escape
 
@@ -166,4 +166,19 @@ for x1,x2 in [(401,390),(527,539),(663,654)]:
 s+=text(529,422,'Compare meaning',28)
 save('caption-evaluation','Evaluating the meaning of image captions','A minimal scene of a person in a boat is paired with a reference caption and a differently worded candidate caption. Correspondence lines illustrate semantic comparison, inspired by Word Mover’s Distance, without assigning invented scores.',s)
 
-print(f'Wrote seven SVG illustrations to {DEST}')
+# Digital pathology: conceptual WSI-to-network-to-score flow, without a numerical claim.
+s=box(53,151,173,185,PAPER,INK,12)+box(65,163,149,21,OAT,'none',3)
+s+=path('M80 221 C94 184 138 200 148 215 C185 194 205 239 183 262 C204 293 163 319 141 295 C100 319 68 281 86 260 C69 249 70 233 80 221 Z',CLAY,SAND)
+for x,y in [(96,231),(122,218),(158,232),(176,250),(144,264),(109,278),(164,285),(99,251)]:
+ s+=circle(x,y,4,CLAY)
+s+=box(129,236,35,35,'none',SAGE,2,extra='stroke-width="3"')
+s+=arrow(248,247,301,247)
+s+=network(338,193,124,108,PAPER,SAGE)
+s+=arrow(492,247,546,247)
+s+=box(576,190,169,112,PAPER,INK,12)
+s+=text(660,223,'Recurrence',23)+text(660,253,'risk score',23)
+s+=line(597,278,723,278,STONE)+circle(671,278,7,CLAY)
+s+=text(140,412,'Whole-slide image',25)+text(400,412,'Neural network',25)+text(660,412,'Risk score',25)
+save('digital-pathology','From whole-slide tissue images to recurrence risk','A conceptual whole-slide tissue image is passed into a neural network that outputs a recurrence risk score. The marker is illustrative and gives no numerical or clinical prediction.',s)
+
+print(f'Wrote eight SVG illustrations to {DEST}')

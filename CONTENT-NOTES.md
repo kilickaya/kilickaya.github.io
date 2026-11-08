@@ -16,25 +16,25 @@ This is a buildless GitHub Pages site. Edit `index.html` for research and career
 
 ## Publication illustrations
 
-All seven publications now have matching SVG concept illustrations in `images/research/`. Each paper appears once in Research with its concept illustration, full metadata, description and resource links. The original paper figures are unchanged and linked below each redraw. Illustration descriptions and primary sources are documented in `images/research/README.md`; `python3 scripts/draw-publications.py` regenerates the complete set without external dependencies.
+All eight research entries now have matching SVG concept illustrations in `images/research/`. Each paper appears once in Research with its concept illustration, full metadata, description and resource links. The original paper figures remain archived; their links were removed from the research cards at Mert’s request. Illustration descriptions and primary sources are documented in `images/research/README.md`; `python3 scripts/draw-publications.py` regenerates the complete set without external dependencies.
 
 ## ESMO 2026 news
 
-Mert confirmed that Agendia's LBA20, “AI Driven Digital Pathology for the 70 Gene Recurrence Signature: Development and Validation in Early Stage Breast Cancer,” is his paper. The news item links to [Agendia's official announcement](https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/), which lists the title, abstract number and 24 October 2026 podium presentation. The full author list and journal/DOI record are not supplied by that announcement, so no bibliographic entry or author metadata has been inferred. The site describes it as work presented at ESMO 2026.
+Mert confirmed that Agendia's LBA20, “AI Driven Digital Pathology for the 70 Gene Recurrence Signature: Development and Validation in Early Stage Breast Cancer,” is his paper. The news item links to [Agendia's official announcement](https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/), which lists the title, abstract number and 24 October 2026 podium presentation. The research section now includes this abstract and links to Agendia’s dedicated publication page. That page credits presenter Laura van ’t Veer but does not provide a full author list or journal/DOI record. The exports omit unknown authors and record the presenter separately from authorship. The site describes it as work presented at ESMO 2026.
 
 ## Research identity
 
-Mert describes himself as an “autonomous vision researcher.” The bio and research introduction frame data curation, continual learning and adaptation to real-time changes as his research goal, rather than claiming these capabilities are already solved or deployed. This wording updates the personal identity, not historical job titles or publication metadata.
+Mert’s current requested header label is “Senior AI Research Engineer.” The bio and research introduction frame data curation, continual learning and adaptation to real-time changes as his research goal, rather than claiming these capabilities are already solved or deployed. This wording updates the personal identity, not historical job titles or publication metadata.
 
 ## Career navigation
 
-The bio has a direct “Career & education” shortcut and both pages label the main navigation link “Experience.” The career timeline sits after News and before Research, with five roles listed most recent first, preserving the dates, locations, supervisor links and research areas already documented. CV and LinkedIn links sit beside the section introduction. Mert subsequently confirmed the Greyparrot title as Senior Research Engineer and the Agendia end date as October 2026.
+Both pages label the main navigation link “Experience.” The redundant shortcut and current/previous employer paragraph below the bio were removed at Mert’s request. The career timeline sits after News and before Research, with five roles listed most recent first, preserving the dates, locations, supervisor links and research areas already documented. CV and LinkedIn links sit beside the section introduction. Mert subsequently confirmed the Greyparrot title as Senior Research Engineer and the Agendia end date as October 2026.
 
 ## Structured profile and crawler discovery
 
-The homepage includes Schema.org `ProfilePage`, `Person` and `ScholarlyArticle` JSON-LD. It describes the same research identity, current job, education and seven archive publications shown on the page. “Autonomous vision researcher” is the personal research identity; “Senior Research Engineer” is the confirmed Greyparrot job title. They are distinct fields.
+The homepage includes Schema.org `ProfilePage`, `Person` and `ScholarlyArticle` JSON-LD. It describes the same research identity, current job, education and eight research entries shown on the page. “Senior AI Research Engineer” is the requested header label; “Senior Research Engineer” is the confirmed Greyparrot job title. They are distinct fields.
 
-`profile.md`, `profile.json`, `llms.txt` and `publications.bib` are generated from the visible HTML by `scripts/build-profile.py`. Career dates retain their original precision, including Agendia's confirmed October 2026 end date. Unknown locations and other absent values are not guessed. The CV remains the existing PDF; the plain-text profile flags its possible lag behind the current homepage. ESMO 2026 is included as news, not an invented full bibliographic entry. Patent labels remain quoted as original labels rather than treated as verified jurisdictions or grant dates.
+`profile.md`, `profile.json`, `llms.txt` and `publications.bib` are generated from the visible HTML by `scripts/build-profile.py`. Career dates retain their original precision, including Agendia's confirmed October 2026 end date. Unknown locations and other absent values are not guessed. The CV remains the existing PDF; the plain-text profile flags its possible lag behind the current homepage. ESMO 2026 appears in News and Research with available abstract metadata and no inferred full author list. Patent labels remain quoted as original labels rather than treated as verified jurisdictions or grant dates.
 
 Canonical and social metadata identify the homepage and photography page. The sitemap lists those two canonical pages without invented freshness dates or priorities. `robots.txt` allows ordinary crawling and points to the sitemap. `llms.txt` is an optional discovery convention; these changes do not guarantee indexing, rankings, or agent recommendations. The visible page remains the source of truth; run `python3 scripts/build-profile.py` after content edits and `--check` to catch stale exports.
 
@@ -44,7 +44,7 @@ The career timeline uses five matching monochrome SVG marks, including Greyparro
 
 ## Unified research section
 
-The separate Selected Research and Publications sections are combined into one Research section. All seven archive papers appear once, most recent first, with one consistent image-led layout. Original paper figures remain linked. Individual `publication-1` through `publication-7` anchors are unchanged; the former `#publications` anchor points to the Research section for existing links. Navigation, profile exports, structured metadata and the Markdown profile use the unified section.
+The separate Selected Research and Publications sections are combined into one Research section. All seven archive papers appear once, most recent first, with one consistent image-led layout. Original paper figures remain archived without card links. Individual `publication-1` through `publication-7` anchors are unchanged; the former `#publications` anchor points to the Research section for existing links. Navigation, profile exports, structured metadata and the Markdown profile use the unified section.
 
 ## Scrolling and reading flow
 

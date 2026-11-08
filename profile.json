@@ -1,6 +1,6 @@
 {
   "name": "Mert Kilickaya",
-  "identity": "Autonomous vision researcher",
+  "identity": "Senior AI Research Engineer",
   "researchGoal": "I am an AI researcher. My goal is to help automate vision. Can we build models that curate their own data, extract their own supervision, and adapt on the fly to changes in the real world?",
   "researchOverview": "I want visual models to take a more active role in their own learning: choosing useful data, learning from new observations, and adapting efficiently as conditions change. This goal connects my work in self-supervised, continual, and vision-language learning with applications from medical diagnostics to industrial visual intelligence.",
   "researchTopics": [
@@ -180,6 +180,27 @@
     }
   ],
   "publications": [
+    {
+      "id": "publication-esmo-2026",
+      "title": "AI Driven Digital Pathology for the 70 Gene Recurrence Signature: Development and Validation in Early Stage Breast Cancer",
+      "authors": [],
+      "authorNote": "Agendia · Presented by Laura van ’t Veer",
+      "venue": "ESMO 2026 · LBA20 (Oral)",
+      "year": 2026,
+      "description": "Our work at Agendia explores predicting recurrence risk directly from routine whole-slide images of breast cancer tissue, using supervision from the 70-gene signature.",
+      "links": [
+        {
+          "label": "Abstract",
+          "url": "https://agendia.com/ai-driven-digital-pathology-for-the-70-gene-recurrence-signature-development-and-validation-in-early-stage-breast-cancer/"
+        },
+        {
+          "label": "Announcement",
+          "url": "https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/"
+        }
+      ],
+      "illustrationURL": "https://kilickaya.github.io/images/research/digital-pathology.svg",
+      "sourceURL": "https://kilickaya.github.io/#publication-esmo-2026"
+    },
     {
       "id": "publication-1",
       "title": "HyTAS: A Hyperspectral Image Transformer Architecture Search Benchmark and Analysis",
@@ -456,7 +477,7 @@
     "Research goals describe a direction of work, not a claim of solved or deployed capabilities.",
     "Dates retain their available precision. A null endDate for a current role means ongoing; other null fields mean no value is supplied on the website.",
     "The CV is an existing PDF and may lag the career information on the homepage.",
-    "The ESMO 2026 item is news linked to Agendia’s announcement; a full author list and journal record are not supplied.",
+    "The ESMO 2026 abstract is linked to Agendia’s publication page. Its presenter is credited separately; the full author list and journal/DOI record are not supplied.",
     "The publication archive is the archive on this website, not a claim to include every subsequent work.",
     "Patent citation labels are preserved from the original archive and are not independently verified jurisdiction or grant dates."
   ]

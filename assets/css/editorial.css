@@ -209,16 +209,6 @@ h3 {
 .intro-copy > p:not([class]) {
   font-size: 20px;
 }
-.affiliation {
-  color: var(--stone);
-  font-size: 18px;
-  line-height: 1.7;
-  margin-top: 24px;
-}
-.affiliation strong {
-  color: var(--ink);
-  font-weight: 400;
-}
 .text-links {
   display: flex;
   flex-wrap: wrap;
@@ -359,16 +349,6 @@ figcaption {
 }
 .bio-education {
   font-size: 20px;
-}
-.career-shortcut {
-  margin: 22px 0 0;
-  font-size: 18px;
-}
-.career-shortcut a {
-  text-decoration-color: var(--accent);
-}
-.career-shortcut span {
-  margin-left: 10px;
 }
 .career-resources {
   margin-top: 22px;
@@ -695,10 +675,6 @@ summary span {
   }
   .bio-education {
     margin: 0;
-  }
-  .affiliation {
-    font-size: 17px;
-    margin: 4px 0 0;
   }
   .intro-copy > .text-links {
     font-size: 17px;

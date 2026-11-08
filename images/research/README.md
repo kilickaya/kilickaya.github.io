@@ -1,6 +1,6 @@
 # Publication illustration system
 
-Seven original SVG concept illustrations, drawn for Mert Kilickaya's research website. These are editorial explanations of each paper's central idea, not reproductions of its architecture diagrams or quantitative results. Original figures remain archived in `images/`; research entries display the unified illustrations.
+Eight original SVG concept illustrations, drawn for Mert Kilickaya's research website. These are editorial explanations of each paper's central idea, not reproductions of its architecture diagrams or quantitative results. Original figures remain archived in `images/`; research entries display the unified illustrations.
 
 ## Shared drawing language
 
@@ -15,6 +15,7 @@ Seven original SVG concept illustrations, drawn for Mert Kilickaya's research we
 
 | Asset                          | Concept                                                    | Paper                                                        |
 | ------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| `digital-pathology.svg` | Whole-slide tissue image, neural network, recurrence risk score | [ESMO 2026 abstract](https://agendia.com/ai-driven-digital-pathology-for-the-70-gene-recurrence-signature-development-and-validation-in-early-stage-breast-cancer/) |
 | `hytas.svg`                    | Spectral data, candidate search, selected architecture     | [HyTAS](https://arxiv.org/abs/2407.16269)                    |
 | `hylite.svg`                   | Local context and spectra jointly inform classification    | [HyLITE](https://arxiv.org/abs/2309.01561)                   |
 | `label-efficient-learning.svg` | Three supervision regimes learning over time               | [Survey](https://arxiv.org/abs/2302.00353)                   |
@@ -23,4 +24,4 @@ Seven original SVG concept illustrations, drawn for Mert Kilickaya's research we
 | `composition-aware-search.svg` | Composition and representation change together             | [Composition-aware search](https://arxiv.org/abs/2010.14438) |
 | `caption-evaluation.svg`       | Semantic comparison of reference and candidate captions    | [Caption evaluation](https://arxiv.org/abs/1612.07600)       |
 
-Regenerate the illustrations with `python3 scripts/draw-publications.py` from the repository root. The generator has no external dependencies and owns all seven SVGs. Adjust the shared palette and drawing helpers there to preserve consistency. The images retain their warm paper palette in either website theme.
+Regenerate the illustrations with `python3 scripts/draw-publications.py` from the repository root. The generator has no external dependencies and owns all eight SVGs. Adjust the shared palette and drawing helpers there to preserve consistency. The images retain their warm paper palette in either website theme.

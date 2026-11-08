@@ -143,7 +143,8 @@ def read_profile(doc):
         papers.append({
             'id': article.attrs['id'],
             'title': article.first('h3').text(),
-            'authors': [a.strip() for a in article.first(cls='authors').text().split(',')],
+            'authors': [] if article.attrs.get('data-authors-complete') == 'false' else [a.strip() for a in article.first(cls='authors').text().split(',')],
+            **({'authorNote': article.first(cls='authors').text()} if article.attrs.get('data-authors-complete') == 'false' else {}),
             'venue': venue,
             'year': int(re.search(r'\d{4}', venue)[0]),
             'description': article.first(cls='description').text(),
@@ -201,7 +202,7 @@ def read_profile(doc):
             'Research goals describe a direction of work, not a claim of solved or deployed capabilities.',
             'Dates retain their available precision. A null endDate for a current role means ongoing; other null fields mean no value is supplied on the website.',
             'The CV is an existing PDF and may lag the career information on the homepage.',
-            'The ESMO 2026 item is news linked to Agendia’s announcement; a full author list and journal record are not supplied.',
+            'The ESMO 2026 abstract is linked to Agendia’s publication page. Its presenter is credited separately; the full author list and journal/DOI record are not supplied.',
             'The publication archive is the archive on this website, not a claim to include every subsequent work.',
             'Patent citation labels are preserved from the original archive and are not independently verified jurisdiction or grant dates.',
         ],
@@ -236,6 +237,8 @@ def schema(profile, title):
                  'author': [{'@id': person_id} if a == profile['name'] else {'@type': 'Person', 'name': a} for a in p['authors']],
                  'datePublished': str(p['year']), 'description': p['description'],
                  'url': p['links'][0]['url'], 'image': p['illustrationURL']}
+        if not p['authors']:
+            del paper['author']
         if p['venue'].startswith('Preprint'):
             paper['creativeWorkStatus'] = 'Preprint'
         else:
@@ -266,7 +269,7 @@ def markdown(profile):
         out.extend(f"  - [{p['label']}]({p['url']})" for p in n['links'])
     out.append('## Research')
     for p in profile['publications']:
-        out += [f"### {p['title']}", ', '.join(p['authors']), p['venue'], p['description']]
+        out += [f"### {p['title']}", p.get('authorNote', ', '.join(p['authors'])), p['venue'], p['description']]
         out.extend(f"- [{l['label']}]({l['url']})" for l in p['links'])
         out.append(f"- [Publication on the website]({p['sourceURL']})")
     out.append('## Patents')
@@ -292,6 +295,9 @@ def bibtex(profile):
         fields['howpublished' if preprint else 'booktitle'] = re.sub(r'\s*\(Oral\)$', '', p['venue'])
         if '(Oral)' in p['venue']:
             fields['note'] = 'Oral presentation'
+        if not p['authors']:
+            del fields['author']
+            fields['note'] = p['authorNote'] + '; full author list unavailable in the linked source'
         fields['url'] = p['links'][0]['url']
         fields = ',\n'.join('  ' + k + ' = {' + (v if k == 'url' else '{' + esc(v) + '}' if k == 'title' else esc(v)) + '}' for k, v in fields.items())
         entries.append('@' + ('misc' if preprint else 'inproceedings') + '{' + key + ',\n' + fields + '\n}')
@@ -347,9 +353,9 @@ def main():
 
 - [Research profile]({BASE}profile.md): Biography, career dates, education, news, publications, patents and mentorship in Markdown, generated from the homepage.
 - [Structured profile]({BASE}profile.json): The same facts as JSON, with explicit date precision and source links.
-- [Publications in BibTeX]({BASE}publications.bib): Citations for the seven publications in the existing research archive.
+- [Publications in BibTeX]({BASE}publications.bib): Citations for the research archive, including the ESMO 2026 abstract with its available metadata.
 - [Experience]({BASE}#experience): Current and previous research roles, dates, and PhD supervision.
-- [Research]({BASE}#research): Paper, code, slide and original figure links.
+- [Research]({BASE}#research): Research illustrations and paper, abstract, code and slide links.
 - [News]({BASE}#news): Includes the ESMO 2026 Agendia research presentation and the move to Greyparrot.
 - [Google Scholar]({next(p['url'] for p in profile['profiles'] if p['label'] == 'Google Scholar')}): External academic profile.
 - [LinkedIn]({next(p['url'] for p in profile['profiles'] if p['label'] == 'LinkedIn')}): External professional profile.
