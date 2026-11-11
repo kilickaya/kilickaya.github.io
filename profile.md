@@ -54,7 +54,7 @@ Location: Netherlands
 
 ### Huawei Visual Search Lab
 
-Research Intern · March 2021 — January 2022
+Research Intern · 2020 — 2021
 
 Research focus: Multimodal Learning
 
@@ -260,7 +260,7 @@ Mert Kilickaya, Noureldien Hussein, Stratis Gavves, Arnold Smeulders
 
 - Dates retain their available precision. A null endDate for a current role means ongoing; other null fields mean no value is supplied on the website.
 
-- The CV is an existing PDF and may lag the career information on the homepage.
+- The linked CV was supplied by Mert on 11 November 2026.
 
 - The ESMO 2026 abstract is linked to Agendia’s publication page. Its presenter is credited separately; the full author list and journal/DOI record are not supplied.
 

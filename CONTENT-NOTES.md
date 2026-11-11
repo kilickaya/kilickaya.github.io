@@ -4,7 +4,7 @@ The redesign uses the repository's existing research archive and the career upda
 
 - Greyparrot is the current employer. Mert confirmed his title as Senior Research Engineer, starting October 2026. The location has not been supplied.
 - Agendia is a previous employer. The original start year (2023) is retained, and Mert confirmed an end date of October 2026.
-- The linked CV is the original PDF and may still describe the earlier career status. It has not been rewritten.
+- The linked CV was replaced with Mert’s Desktop `resume_2026.pdf` on 11 November 2026, without modifying the PDF.
 - Publication metadata, author lists, descriptions, links, and patent labels and years are retained from the original site. In particular, the EP4058930A1 patent was labelled “US Patent, 2021”; confirm the jurisdiction and date before correcting it. WO2023117041A1 was labelled “WO Patent, 2022”; its displayed year also needs confirmation.
 - The label “Preprint 2023” is retained for the incremental learning survey. No later publication status has been assumed.
 - News is visible immediately after the bio. The 2023–2024 news is preserved in an “Earlier news” disclosure within that section.
@@ -34,7 +34,7 @@ Both pages label the main navigation link “Experience.” The redundant shortc
 
 The homepage includes Schema.org `ProfilePage`, `Person` and `ScholarlyArticle` JSON-LD. It describes the same research identity, current job, education and eight research entries shown on the page. “Senior AI Research Engineer” is the requested header label; “Senior Research Engineer” is the confirmed Greyparrot job title. They are distinct fields.
 
-`profile.md`, `profile.json`, `llms.txt` and `publications.bib` are generated from the visible HTML by `scripts/build-profile.py`. Career dates retain their original precision, including Agendia's confirmed October 2026 end date. Unknown locations and other absent values are not guessed. The CV remains the existing PDF; the plain-text profile flags its possible lag behind the current homepage. ESMO 2026 appears in News and Research with available abstract metadata and no inferred full author list. Patent labels remain quoted as original labels rather than treated as verified jurisdictions or grant dates.
+`profile.md`, `profile.json`, `llms.txt` and `publications.bib` are generated from the visible HTML by `scripts/build-profile.py`. Career dates retain their original precision, including Agendia's confirmed October 2026 end date. Unknown locations and other absent values are not guessed. The CV is Mert’s updated PDF supplied on 11 November 2026. ESMO 2026 appears in News and Research with available abstract metadata and no inferred full author list. Patent labels remain quoted as original labels rather than treated as verified jurisdictions or grant dates.
 
 Canonical and social metadata identify the homepage and photography page. The sitemap lists those two canonical pages without invented freshness dates or priorities. `robots.txt` allows ordinary crawling and points to the sitemap. `llms.txt` is an optional discovery convention; these changes do not guarantee indexing, rankings, or agent recommendations. The visible page remains the source of truth; run `python3 scripts/build-profile.py` after content edits and `--check` to catch stale exports.
 
@@ -57,3 +57,7 @@ The pass trims section and entry spacing while retaining the existing body text 
 Patents use four matching concept drawings and a two-column layout at the same width as Research. Each entry retains its title, inventors and original citation link, without a new description. The shared illustration generator owns both image sets; patent concept sources are documented in `images/patents/README.md`.
 
 People & Mentorship uses two columns on wider screens, retaining all seven people, photographs, projects, dates and links. Both grids stack below 621 pixels for readable mobile layouts.
+
+## CV and Huawei dates update
+
+On 11 November 2026, Mert supplied an updated CV and confirmed Huawei’s dates as 2020–2021, using year-only precision. The homepage timeline and generated profile reflect that correction. Existing CV links continue to use `resume/resume.pdf`.

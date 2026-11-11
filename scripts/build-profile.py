@@ -201,7 +201,7 @@ def read_profile(doc):
         'sourceNotes': [
             'Research goals describe a direction of work, not a claim of solved or deployed capabilities.',
             'Dates retain their available precision. A null endDate for a current role means ongoing; other null fields mean no value is supplied on the website.',
-            'The CV is an existing PDF and may lag the career information on the homepage.',
+            'The linked CV was supplied by Mert on 11 November 2026.',
             'The ESMO 2026 abstract is linked to Agendia’s publication page. Its presenter is credited separately; the full author list and journal/DOI record are not supplied.',
             'The publication archive is the archive on this website, not a claim to include every subsequent work.',
             'Patent citation labels are preserved from the original archive and are not independently verified jurisdiction or grant dates.',
