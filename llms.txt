@@ -1,6 +1,6 @@
 # Mert Kilickaya
 
-> Senior AI Research Engineer. Senior Research Engineer at Greyparrot since 2026-10. PhD in computer vision, University of Amsterdam; supervised by Arnold Smeulders.
+> Senior AI Research Engineer. Senior Research Engineer at Greyparrot since 2026-09. PhD in computer vision, University of Amsterdam; supervised by Arnold Smeulders.
 
 I am an AI researcher. My goal is to help automate vision. Can we build models that curate their own data, extract their own supervision, and adapt on the fly to changes in the real world?
 
