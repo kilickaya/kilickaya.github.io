@@ -30,7 +30,7 @@ I completed my PhD in computer vision at the University of Amsterdam’s Qualcom
 
 ### Greyparrot
 
-Senior Research Engineer · October 2026 — present
+Senior Research Engineer · September 2026 — present
 
 Research focus: Industrial visual intelligence
 
@@ -78,7 +78,7 @@ Location: Netherlands
 
   - [AI-driven digital pathology for the 70-gene recurrence signature](https://agendia.com/agendia-ai-driven-digital-pathology-esmo-2026/)
 
-- **2026-10** — I joined Greyparrot as a Senior Research Engineer.
+- **2026-09** — I joined Greyparrot as a Senior Research Engineer.
 
 - **2024-10** — Honored to be an outstanding reviewer for ECCV'24!
 

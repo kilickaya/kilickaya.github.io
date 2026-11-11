@@ -36,8 +36,8 @@
     "roleTitle": "Senior Research Engineer",
     "researchFocus": "Industrial visual intelligence",
     "location": null,
-    "dateLabel": "October 2026 — present",
-    "startDate": "2026-10",
+    "dateLabel": "September 2026 — present",
+    "startDate": "2026-09",
     "endDate": null,
     "current": true,
     "links": [],
@@ -60,8 +60,8 @@
       "roleTitle": "Senior Research Engineer",
       "researchFocus": "Industrial visual intelligence",
       "location": null,
-      "dateLabel": "October 2026 — present",
-      "startDate": "2026-10",
+      "dateLabel": "September 2026 — present",
+      "startDate": "2026-09",
       "endDate": null,
       "current": true,
       "links": [],
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "date": "2026-10",
+      "date": "2026-09",
       "text": "I joined Greyparrot as a Senior Research Engineer.",
       "links": []
     }

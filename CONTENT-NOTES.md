@@ -2,7 +2,7 @@
 
 The redesign uses the repository's existing research archive and the career update supplied by Mert on 15 October 2026.
 
-- Greyparrot is the current employer. Mert confirmed his title as Senior Research Engineer, starting October 2026. The location has not been supplied.
+- Greyparrot is the current employer. Mert confirmed his title as Senior Research Engineer, starting September 2026. The location has not been supplied.
 - Agendia is a previous employer. The original start year (2023) is retained, and Mert confirmed an end date of October 2026.
 - The linked CV was replaced with Mert’s Desktop `resume_2026.pdf` on 11 November 2026, without modifying the PDF.
 - Publication metadata, author lists, descriptions, links, and patent labels and years are retained from the original site. In particular, the EP4058930A1 patent was labelled “US Patent, 2021”; confirm the jurisdiction and date before correcting it. WO2023117041A1 was labelled “WO Patent, 2022”; its displayed year also needs confirmation.
@@ -61,3 +61,7 @@ People & Mentorship uses two columns on wider screens, retaining all seven peopl
 ## CV and Huawei dates update
 
 On 11 November 2026, Mert supplied an updated CV and confirmed Huawei’s dates as 2020–2021, using year-only precision. The homepage timeline and generated profile reflect that correction. Existing CV links continue to use `resume/resume.pdf`.
+
+## Greyparrot start date correction
+
+On 11 November 2026, Mert corrected his Greyparrot start date to September 2026. The joining news, Experience timeline and generated profiles use this date. The supplied PDF is unchanged.
